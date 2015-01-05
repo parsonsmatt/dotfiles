@@ -1,3 +1,9 @@
 .DS_Store
 *~
-*.swp
+[._]*.s[a-w][a-z]
+.*.swp
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
