@@ -1,0 +1,26 @@
+# rebind key
+unbind C-b
+set -g prefix C-a
+
+# mouse scrolling
+set-window-option -g mode-mouse copy-mode
+
+# make it pretty
+set -g pane-border-fg white
+set -g pane-active-border-fg blue
+set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-bg black
+set -g status-bg blue
+
+# bind better pane switching:
+bind-key -n C-Up select-pane -U
+bind-key -n C-Down select-pane -D
+bind-key -n C-Right select-pane -R
+bind-key -n C-Left select-pane -L
+
+# unbind default pane switching:
+unbind Up
+unbind Down
+unbind Left
+unbind Right
+
