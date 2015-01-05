@@ -2,3 +2,21 @@ syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+" Better search
+set incsearch
+set hlsearch
+set smartcase
+set ignorecase
+
+" Line numbers
+set number
+set relativenumber
+set numberwidth=2
+
+" Default indentation:
+set autoindent
+set smartindent
+set softtabstop=4
+set shiftwidth=4
+set expandtab
