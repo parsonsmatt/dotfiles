@@ -11,7 +11,7 @@ set ignorecase
 
 " Line numbers
 set number
-set relativenumber
+" set relativenumber " UGA's server doesn't support this :(((
 set numberwidth=2
 
 " Default indentation:
