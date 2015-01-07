@@ -1,1 +1,1 @@
-alias nike = 'ssh parsons@nike.cs.uga.edu'
+alias nike='ssh parsons@nike.cs.uga.edu'
