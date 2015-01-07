@@ -5,14 +5,15 @@ source ~/.git-completion.bash
 # Color codes!
 WHT="\[\e[00;00m\]"
 PPL="\[\e[00;35m\]"
-BLU="\[\e[00;36m\\]"
-
+BLU="\[\e[00;36m\]"
+GRN="\[\e[00;32m\]"
 
 if [[ $LC_CTYPE =~ \.[Uu][Tt][Ff]-?8 ]]; then
     LAMBDA=$'\xce\xbb\0a' # a nice pretty lambda!
     PS1="$BLU$LAMBDA$WHT@$PPL\h$WHT:\w " # ",\@[host]:[current directory] "
 fi
 
-PS1=$PS1'$(__git_ps1 "(%s)") '
+GET_PS1_SHOWCOLORHINTS=1    # Color on my prompt
+PS1=$PS1$GRN'$(__git_ps1 "(%s) ")'$WHT # Add git prompt
 
 alias reload!="source ~/.bashrc"
