@@ -13,6 +13,8 @@ set ignorecase
 set number
 set relativenumber
 set numberwidth=2
+highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
+highlight CursorLineNr term=bold cterm=none ctermfg=Grey ctermbg=NONE
 
 " Default indentation:
 set autoindent
@@ -20,3 +22,6 @@ set smartindent
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+" Shortcut to clear search highlight
+nnoremap <C-L> :noh<CR><C-L>
