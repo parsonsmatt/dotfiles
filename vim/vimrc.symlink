@@ -14,7 +14,7 @@ set number
 set relativenumber
 set numberwidth=2
 highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
-highlight CursorLineNr term=bold cterm=none ctermfg=Grey ctermbg=NONE
+highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 
 " Default indentation:
 set autoindent
