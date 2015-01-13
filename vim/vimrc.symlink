@@ -1,7 +1,9 @@
+execute pathogen#infect()
+
 syntax on
 
 " Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+filetype plugin indent on
 
 " Better search
 set incsearch
