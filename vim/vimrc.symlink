@@ -1,8 +1,9 @@
 execute pathogen#infect()
 
+set nocompatible
+
 syntax on
 
-" Wrap gitcommit file types at the appropriate length
 filetype plugin indent on
 
 " Better search
@@ -20,6 +21,7 @@ highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 
 " Default indentation: 
 set autoindent
+set smartindent
 set softtabstop=4
 set shiftwidth=4
 set expandtab
