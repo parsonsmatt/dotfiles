@@ -13,10 +13,14 @@ set ignorecase
 set number
 " set relativenumber " UGA's server doesn't support this :(((
 set numberwidth=2
+highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
+highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 
-" Default indentation:
+" Default indentation: 
 set autoindent
-set smartindent
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+" Shortcut to clear search highlight
+nnoremap <C-L> :noh<CR><C-L>
