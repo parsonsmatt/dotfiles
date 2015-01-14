@@ -9,10 +9,12 @@ GRN="\[\e[00;32m\]"
 
 if [[ $LC_CTYPE =~ \.[Uu][Tt][Ff]-?8 ]]; then
     LAMBDA=$'\xce\xbb\0a' # a nice pretty lambda!
-    PS1="$BLU$LAMBDA$WHT@$PPL\h$WHT:\w " # ",\@[host]:[current directory] "
+    PS1="$BLU$LAMBDA$WHT@$PPL\h$WHT:\w " # "[lambda]@[host]:[current directory] "
 fi
 
-GET_PS1_SHOWCOLORHINTS=1    # Color on my prompt
+
+GIT_PS1_SHOWCOLORHINTS=1    # Color on my prompt
+GIT_PS1_SHOWDIRTYSTATE=1    # show state
 PS1=$PS1$GRN'$(__git_ps1 "(%s) ")'$WHT # Add git prompt
 
 alias reload!="source ~/.bashrc"
