@@ -1,0 +1,4 @@
+rvm_autoupdate_flag=2
+
+rvm_with_gems="bundler"
+rvm_auto_reload_flag=1
