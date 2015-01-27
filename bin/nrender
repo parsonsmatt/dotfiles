@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Renders file $1.md into $1.pdf
+
+# TODO: Check if argument present, if not, display help 
+
+pandoc -f markdown+raw_tex -s $1.markdown -o $1.pdf
