@@ -45,3 +45,6 @@ nnoremap <leader>b :SelectaBuffer<cr>
 " Find previously run commands.
 " Fuzzy select one of those. Run that command with :
 nnoremap <leader>h :SelectaHistoryCommand<cr>
+
+" Open gdiff in vertical windows
+set diffopt+=vertical
