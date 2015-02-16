@@ -12,3 +12,5 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 
 alias gffs='git flow feature start'
 alias gffd='git flow feature finish'
+
+alias gitsync='for remote in `git branch -r`; do git branch --track $remote; done'
