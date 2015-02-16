@@ -28,3 +28,5 @@ set smartindent
 
 " Shortcut to clear search highlight
 nnoremap <C-L> :noh<CR><C-L>
+
+set diffopt+=vertical
