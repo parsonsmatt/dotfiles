@@ -1,6 +1,21 @@
 [submodule "vim/vim.symlink/bundle/emmet-vim"]
 	path = vim/vim.symlink/bundle/emmet-vim
 	url = http://www.github.com/mattn/emmet-vim
-[submodule "vim/vim.symlink/bundle/https:/github.com/michaelvila/selecta.vim"]
-	path = vim/vim.symlink/bundle/https:/github.com/michaelvila/selecta.vim
+[submodule "vim/vim.symlink/bundle/haskell-vim"]
+	path = vim/vim.symlink/bundle/haskell-vim
 	url = https://github.com/raichoo/haskell-vim
+[submodule "vim/vim.symlink/bundle/vim-bundler"]
+	path = vim/vim.symlink/bundle/vim-bundler
+	url = git@github.com:tpope/vim-bundler
+[submodule "vim/vim.symlink/bundle/vim-fugitive"]
+	path = vim/vim.symlink/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule "vim/vim.symlink/bundle/vim-javascript"]
+	path = vim/vim.symlink/bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript
+[submodule "vim/vim.symlink/bundle/vim-rails"]
+	path = vim/vim.symlink/bundle/vim-rails
+	url = git@github.com:tpope/vim-rails
+[submodule "vim/vim.symlink/bundle/vim-ruby"]
+	path = vim/vim.symlink/bundle/vim-ruby
+	url = git@github.com:vim-ruby/vim-ruby
