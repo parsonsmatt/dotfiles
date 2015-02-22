@@ -1,3 +1,6 @@
 [submodule "vim/vim.symlink/bundle/emmet-vim"]
 	path = vim/vim.symlink/bundle/emmet-vim
 	url = http://www.github.com/mattn/emmet-vim
+[submodule "vim/vim.symlink/bundle/https:/github.com/michaelvila/selecta.vim"]
+	path = vim/vim.symlink/bundle/https:/github.com/michaelvila/selecta.vim
+	url = https://github.com/raichoo/haskell-vim

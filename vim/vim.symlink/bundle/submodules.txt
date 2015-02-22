@@ -1,0 +1,1 @@
+https://github.com/raichoo/haskell-vim,https://github.com/michaelvila/selecta.vim,https://github.com/tpope/vim-bundler,https://github.com/tpope/vim-fugitive,https://github.com/pangloss/vim-javascript,https://github.com/tpope/vim-rails,https://github.com/vim-ruby/vim-ruby

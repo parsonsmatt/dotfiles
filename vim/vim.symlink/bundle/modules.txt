@@ -1,0 +1,6 @@
+selecta.vim
+vim-bundler
+vim-fugitive
+vim-javascript
+vim-rails
+vim-ruby
