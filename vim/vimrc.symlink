@@ -48,3 +48,9 @@ nnoremap <leader>h :SelectaHistoryCommand<cr>
 
 " Open gdiff in vertical windows
 set diffopt+=vertical
+
+" Noop arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
