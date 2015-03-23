@@ -22,3 +22,6 @@
 [submodule "vim/vim.symlink/bundle/selecta.vim"]
 	path = vim/vim.symlink/bundle/selecta.vim
 	url = https://github.com/michaelavila/selecta.vim
+[submodule "vim/vim.symlink/bundle/vimtex"]
+	path = vim/vim.symlink/bundle/vimtex
+	url = git@github.com:lervag/vimtex.git
