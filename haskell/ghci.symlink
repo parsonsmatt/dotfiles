@@ -6,9 +6,9 @@ import qualified Data.List as L
 import Text.Show.Functions
 
 :set +m
+
 :set prompt "λ: "
 :set prompt2 "λ| "
-:set -XOverloadedStrings
 
 :def hoogle return . (++ "| head -n 30") . (":! hoogle " ++) . show
 :def pf return . (":! pointfree " ++) . show

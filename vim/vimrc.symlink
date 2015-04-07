@@ -12,6 +12,9 @@ set hlsearch
 set smartcase
 set ignorecase
 
+" Filename even with one window:
+set laststatus=2
+
 " Line numbers
 set number
 set relativenumber
