@@ -21,4 +21,4 @@
 	url = git@github.com:vim-ruby/vim-ruby
 [submodule "vim/vim.symlink/bundle/selecta.vim"]
 	path = vim/vim.symlink/bundle/selecta.vim
-	url = https://github.com/michaelavila/selecta.vim
+	url = git@github.com:michaelavila/selecta.vim
