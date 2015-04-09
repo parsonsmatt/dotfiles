@@ -25,3 +25,6 @@
 [submodule "vim/vim.symlink/bundle/ghcmod-vim"]
 	path = vim/vim.symlink/bundle/ghcmod-vim
 	url = git@github.com:eagletmt/ghcmod-vim
+[submodule "vim/vim.symlink/bundle/vimproc.vim"]
+	path = vim/vim.symlink/bundle/vimproc.vim
+	url = git@github.com:Shougo/vimproc.vim
