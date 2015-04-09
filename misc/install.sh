@@ -8,7 +8,9 @@ sudo echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" 
 
 sudo apt-get update
 
-sudo apt-get install zsh silversearcher-ag wallch google-chrome-stable virtualbox 4.3 dkms -y
+sudo apt-get install zsh silversearcher-ag wallch google-chrome-stable virtualbox-4.3 dkms -y
 
 # install oh-my-zsh
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+if [ ! -f ~/.oh-my-zsh ]; then
+	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
