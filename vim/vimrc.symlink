@@ -27,7 +27,7 @@ set autoindent
 set smartindent
 "set softtabstop=4
 "set shiftwidth=4
-"set expandtab
+set expandtab
 
 " Shortcut to clear search highlight
 nnoremap <C-L> :noh<CR><C-L>
