@@ -31,3 +31,6 @@
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/vim.symlink/bundle/vim-hdevtools"]
+	path = vim/vim.symlink/bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools
