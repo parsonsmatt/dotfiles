@@ -28,3 +28,9 @@
 [submodule "vim/vim.symlink/bundle/vimproc.vim"]
 	path = vim/vim.symlink/bundle/vimproc.vim
 	url = git@github.com:Shougo/vimproc.vim
+[submodule "vim/vim.symlink/bundle/syntastic"]
+	path = vim/vim.symlink/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/vim.symlink/bundle/vim-hdevtools"]
+	path = vim/vim.symlink/bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools
