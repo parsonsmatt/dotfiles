@@ -1,2 +1,2 @@
 nnoremap <buffer> <Leader>t :GhcModType<CR>
-au BufWritePost *.hs :GhcModCheckAndLintAsync
+au BufWritePost *.hs :GhcModLintAsync
