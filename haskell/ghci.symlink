@@ -4,8 +4,10 @@ import Data.Function
 import Data.Maybe
 import qualified Data.List as L
 import Text.Show.Functions
+import Data.Text
 
 :set +m
+:set -XOverloadedStrings
 
 :set prompt "λ: "
 :set prompt2 "λ| "
