@@ -29,6 +29,10 @@ set smartindent
 "set shiftwidth=4
 set expandtab
 
+" Persistent Undo
+set undofile
+set undodir=~/.vim/undodir
+
 " Syntastic settings:
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

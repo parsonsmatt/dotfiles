@@ -7,3 +7,4 @@ atom.symlink/themes
 
 git/gitconfig.symlink
 *.log
+vim/vim.symlink/undodir/*
