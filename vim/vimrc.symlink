@@ -15,6 +15,10 @@ set ignorecase
 " Filename even with one window:
 set laststatus=2
 
+" Enough of this!
+command W w
+command Q q
+
 " Line numbers
 set number
 set relativenumber
