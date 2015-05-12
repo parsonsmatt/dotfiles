@@ -34,3 +34,6 @@
 [submodule "vim/vim.symlink/bundle/vim-hdevtools"]
 	path = vim/vim.symlink/bundle/vim-hdevtools
 	url = https://github.com/bitc/vim-hdevtools
+[submodule "vim/vim.symlink/bundle/vim-colorschemes"]
+	path = vim/vim.symlink/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes
