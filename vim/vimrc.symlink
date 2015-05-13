@@ -4,6 +4,11 @@ set nocompatible
 
 syntax on
 
+set background=dark
+colorscheme molokai
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
 filetype plugin indent on
 
 " Better search
