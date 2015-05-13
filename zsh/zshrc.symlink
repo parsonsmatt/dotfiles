@@ -99,7 +99,20 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="$PATH::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matt/"
-
+precmd() {
+  RPROMPT=""
+}
+zle-keymap-select() {
+  RPROMPT=""
+  [[ $KEYMAP = vicmd ]] && RPROMPT="(CMD)"
+  () { return $__prompt_status }
+  zle reset-prompt
+}
+zle-line-init() {
+  typeset -g __prompt_status="$?"
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
