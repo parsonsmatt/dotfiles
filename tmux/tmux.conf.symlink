@@ -10,6 +10,7 @@ bind % split-window -h -c "#{pane_current_path}"
 set-window-option -g mode-mouse on
 
 # make it pretty
+set -g default-terminal "screen-256color"
 set -g pane-border-fg white
 set -g pane-active-border-fg blue
 set-window-option -g window-status-current-fg white
