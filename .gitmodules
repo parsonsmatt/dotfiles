@@ -40,3 +40,9 @@
 [submodule "vim/vim.symlink/bundle/vim-airline"]
 	path = vim/vim.symlink/bundle/vim-airline
 	url = git@github.com:bling/vim-airline
+[submodule "vim/vim.symlink/bundle/gruvbox"]
+	path = vim/vim.symlink/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "vim/vim.symlink/bundle/vim2hs"]
+	path = vim/vim.symlink/bundle/vim2hs
+	url = git@github.com:dag/vim2hs

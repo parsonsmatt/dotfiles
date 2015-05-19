@@ -5,7 +5,7 @@ set nocompatible
 syntax on
 
 set background=dark
-colorscheme molokai
+colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
