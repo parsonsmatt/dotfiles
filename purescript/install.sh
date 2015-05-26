@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cabal install purescript
+# cabal install purescript
