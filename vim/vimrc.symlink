@@ -4,10 +4,16 @@ set nocompatible
 
 syntax on
 
-set background=dark
 colorscheme gruvbox
+set background=dark
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
+highlight Conceal ctermbg=NONE
+
+" Remap leader to comma:
+let mapleader="\<space>"
+
+map <leader>co :colorscheme 
 
 filetype plugin indent on
 
@@ -53,10 +59,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 
 " Shortcut to clear search highlight
-nnoremap <C-L> :noh<CR><C-L>
-
-" Remap leader to comma:
-let mapleader=","
+nnoremap <leader><leader> :noh<CR><C-L>
 
 " haskell conceal
 let g:haskell_conceal_wide = 1
