@@ -1,0 +1,6 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+
+\begin{document}
+$body$
+\end{document}
