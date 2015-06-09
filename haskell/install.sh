@@ -7,4 +7,4 @@ sudo apt-get update
 sudo apt-get install cabal-install-1.22 ghc-7.10.2 happy-1.19.5 alex-3.1.4 -y
 
 cabal update
-cabal install haddock ghc-mod hoogle pointfree hdevtools hlint purescript
+cabal install haddock ghcid hoogle pointfree hdevtools hlint purescript
