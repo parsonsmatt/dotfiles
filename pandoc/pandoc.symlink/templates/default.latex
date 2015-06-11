@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{amssymb}
+\usepackage{amsmath}
 
 \begin{document}
 $body$
