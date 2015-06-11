@@ -40,8 +40,8 @@ highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 " Default indentation: 
 set autoindent
 set smartindent
-"set softtabstop=4
-"set shiftwidth=4
+" set softtabstop=4
+" set shiftwidth=4
 set expandtab
 
 " Persistent Undo
@@ -59,12 +59,18 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 
+" cpp config
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall"
+let g:syntastic_cpp_compiler = "g++"
+
 " Shortcut to clear search highlight
 nnoremap <leader><leader> :noh<CR><C-L>
 
 " haskell conceal
 let g:haskell_conceal_wide = 1
 
+" markdown languages
+let g:markdown_fenced_languages = ['haskell', 'javascript', 'ruby', 'c', 'cpp']
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
