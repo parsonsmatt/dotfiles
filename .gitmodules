@@ -49,3 +49,6 @@
 [submodule "vim/vim.symlink/bundle/vim-markdown"]
 	path = vim/vim.symlink/bundle/vim-markdown
 	url = git@github.com:tpope/vim-markdown
+[submodule "vim/vim.symlink/bundle/ghcmod-vim"]
+	path = vim/vim.symlink/bundle/ghcmod-vim
+	url = git@github.com:eagletmt/ghcmod-vim
