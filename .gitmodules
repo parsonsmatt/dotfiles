@@ -52,3 +52,6 @@
 [submodule "vim/vim.symlink/bundle/ghcmod-vim"]
 	path = vim/vim.symlink/bundle/ghcmod-vim
 	url = git@github.com:eagletmt/ghcmod-vim
+[submodule "vim/vim.symlink/bundle/vim-cpp-enhanced-highlight"]
+	path = vim/vim.symlink/bundle/vim-cpp-enhanced-highlight
+	url = git@github.com:octol/vim-cpp-enhanced-highlight

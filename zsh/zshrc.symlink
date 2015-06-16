@@ -139,5 +139,5 @@ zle -N zle-line-init
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+bindkey '^R' history-incremental-search-backward
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
