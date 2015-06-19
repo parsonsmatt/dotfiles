@@ -1,0 +1,15 @@
+#!/bin/bash
+
+function ctrl_c() {
+    rm -f .test_runner
+    exit
+}
+
+trap ctrl_c INT
+
+mkfifo .test_runner
+
+while true; do
+    `cat .test_runner`
+done
+
