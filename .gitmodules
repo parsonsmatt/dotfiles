@@ -22,9 +22,6 @@
 [submodule "vim/vim.symlink/bundle/selecta.vim"]
 	path = vim/vim.symlink/bundle/selecta.vim
 	url = git@github.com:michaelavila/selecta.vim
-[submodule "vim/vim.symlink/bundle/ghcmod-vim"]
-	path = vim/vim.symlink/bundle/ghcmod-vim
-	url = git@github.com:eagletmt/ghcmod-vim
 [submodule "vim/vim.symlink/bundle/vimproc.vim"]
 	path = vim/vim.symlink/bundle/vimproc.vim
 	url = git@github.com:Shougo/vimproc.vim
@@ -49,3 +46,12 @@
 [submodule "vim/vim.symlink/bundle/purescript-vim"]
 	path = vim/vim.symlink/bundle/purescript-vim
 	url = git@github.com:raichoo/purescript-vim
+[submodule "vim/vim.symlink/bundle/vim-markdown"]
+	path = vim/vim.symlink/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown
+[submodule "vim/vim.symlink/bundle/ghcmod-vim"]
+	path = vim/vim.symlink/bundle/ghcmod-vim
+	url = git@github.com:eagletmt/ghcmod-vim
+[submodule "vim/vim.symlink/bundle/vim-cpp-enhanced-highlight"]
+	path = vim/vim.symlink/bundle/vim-cpp-enhanced-highlight
+	url = git@github.com:octol/vim-cpp-enhanced-highlight

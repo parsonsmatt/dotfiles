@@ -4,4 +4,4 @@
 
 # TODO: Check if argument present, if not, display help 
 
-pandoc -f markdown+raw_tex -s $1 -o $1.pdf
+pandoc -N -f markdown+raw_tex -s $1 -o $1.pdf
