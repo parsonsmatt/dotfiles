@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 sudo apt-get install software-properties-common
 sudo add-apt-repository -y ppa:hvr/ghc

@@ -30,6 +30,9 @@ set laststatus=2
 command W w
 command Q q
 
+" Selecta Ignore
+let SelectaIgnore = ['dist/', 'bower_components/', 'output/', '.git/', '.node_modules/', '.cabal-sandbox', '.stack-work']
+
 " Line numbers
 set number
 set relativenumber
