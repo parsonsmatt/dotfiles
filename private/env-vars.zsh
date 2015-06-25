@@ -6,3 +6,4 @@ then
   source ~/.env-vars
 fi
 
+# vi: set noundofile :

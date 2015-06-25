@@ -7,3 +7,4 @@ if test -f $completion
 then
   source $completion
 fi
+# vi: set noundofile :

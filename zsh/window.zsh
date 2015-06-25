@@ -17,3 +17,4 @@ function title() {
   esac
 }
 
+# vi: set noundofile :

@@ -18,3 +18,4 @@ alias gffd='git flow feature finish'
 function gclo() {
   git clone "git@github.com:$1"
 }
+# vi: set noundofile :
