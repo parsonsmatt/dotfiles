@@ -55,3 +55,6 @@
 [submodule "vim/vim.symlink/bundle/purescript-vim"]
 	path = vim/vim.symlink/bundle/purescript-vim
 	url = git@github.com:raichoo/purescript-vim
+[submodule "vim/vim.symlink/vim-jsx"]
+	path = vim/vim.symlink/vim-jsx
+	url = git@github.com:mxw/vim-jsx
