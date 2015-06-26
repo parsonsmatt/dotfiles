@@ -31,12 +31,6 @@
 [submodule "vim/vim.symlink/bundle/vim-hdevtools"]
 	path = vim/vim.symlink/bundle/vim-hdevtools
 	url = https://github.com/bitc/vim-hdevtools
-[submodule "vim/vim.symlink/bundle/vim-colorschemes"]
-	path = vim/vim.symlink/bundle/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes
-[submodule "vim/vim.symlink/bundle/vim-airline"]
-	path = vim/vim.symlink/bundle/vim-airline
-	url = git@github.com:bling/vim-airline
 [submodule "vim/vim.symlink/bundle/gruvbox"]
 	path = vim/vim.symlink/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox
@@ -46,9 +40,6 @@
 [submodule "vim/vim.symlink/bundle/vim-markdown"]
 	path = vim/vim.symlink/bundle/vim-markdown
 	url = git@github.com:tpope/vim-markdown
-[submodule "vim/vim.symlink/bundle/ghcmod-vim"]
-	path = vim/vim.symlink/bundle/ghcmod-vim
-	url = git@github.com:eagletmt/ghcmod-vim
 [submodule "vim/vim.symlink/bundle/vim-cpp-enhanced-highlight"]
 	path = vim/vim.symlink/bundle/vim-cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight
