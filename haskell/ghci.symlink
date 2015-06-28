@@ -1,13 +1,10 @@
-import Control.Applicative hiding (empty)
+import Control.Applicative
 import Control.Monad
 import Data.Function
 import Data.Maybe
 import Data.List
-import Text.Show.Functions
-import qualified Data.Text as T
 
 :set +m
-:set -XOverloadedStrings
 
 :set prompt "λ: "
 :set prompt2 "λ| "
