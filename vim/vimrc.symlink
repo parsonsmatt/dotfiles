@@ -56,6 +56,9 @@ set undodir=~/.vim/undodir
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
+map <Leader>l yaw :Ag! <C-r>0 <CR>
+map <Leader>L yaW :Ag! <C-r>0 <CR>
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
