@@ -72,6 +72,9 @@ let g:syntastic_cpp_compiler = "g++"
 " Shortcut to clear search highlight
 nnoremap <leader><leader> :noh<CR><C-L>
 
+" delimitMate 
+let delimitMate_expand_cr = 1
+
 " haskell conceal
 let g:haskell_conceal_wide = 1
 
