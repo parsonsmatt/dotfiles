@@ -64,6 +64,3 @@
 [submodule "vim/vim.symlink/bundle/incsearch.vim"]
 	path = vim/vim.symlink/bundle/incsearch.vim
 	url = git@github.com:haya14busa/incsearch.vim
-[submodule "vim/vim.symlink/bundle/vim-stylish-haskell"]
-	path = vim/vim.symlink/bundle/vim-stylish-haskell
-	url = git@github.com:nbouscal/vim-stylish-haskell
