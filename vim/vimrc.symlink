@@ -55,6 +55,8 @@ set undodir=~/.vim/undodir
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
+let g:syntastic_haskell_checkers=['']
+let g:syntastic_disabled_filetypes=['haskell']
 
 map <Leader>l yaw :Ag! <C-r>0 <CR>
 map <Leader>L yaW :Ag! <C-r>0 <CR>
