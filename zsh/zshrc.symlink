@@ -116,7 +116,6 @@ zle -N zle-line-init
 # export MANPATH="/usr/local/man:$MANPATH"
 
 autoload -U +X bashcompinit && bashcompinit
-eval "$(stack --bash-completion-script "$(which stack)")"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
