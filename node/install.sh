@@ -5,4 +5,4 @@ curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 sudo apt-get update
 sudo apt-get install nodejs -y
 
-sudo npm install -g grunt-cli bower
+sudo npm install -g grunt-cli bower eslint
