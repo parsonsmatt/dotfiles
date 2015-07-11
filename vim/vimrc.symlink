@@ -10,12 +10,13 @@ highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 highlight Conceal ctermbg=NONE
 
-" Remap leader to comma:
 let mapleader="\<space>"
 
 map <leader>co :colorscheme 
 
 filetype plugin indent on
+
+imap fd <ESC>
 
 " Better search
 set incsearch
