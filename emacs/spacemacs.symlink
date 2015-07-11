@@ -28,7 +28,9 @@
             shell-default-position 'bottom)
      syntax-checking
      version-control
-     haskell
+     (haskell :variables
+              haskell-enable-shm-support t
+              haskell-enable-hindent-style "chris-done")
      ruby
      javascript
      )
@@ -77,7 +79,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -151,11 +153,11 @@ before layers configuration."
    ;; specified with an installed package.
    ;; Not used for now.
    dotspacemacs-default-package-repository nil
+
+   ruby-version-manager 'rvm
+   ruby-enable-ruby-on-rails-support t
    )
   ;; User initialization goes here
-  (setq-default ruby-version-manager 'rvm
-                ruby-enable-ruby-on-rails-support t)
-  
   )
 
 (defun dotspacemacs/config ()
