@@ -5,6 +5,7 @@ import Data.Maybe
 import Data.List
 
 :set +m
+:set +c
 
 :set prompt "λ: "
 :set prompt2 "λ| "
