@@ -16,8 +16,6 @@ map <leader>co :colorscheme
 
 filetype plugin indent on
 
-imap fd <ESC>
-
 " Better search
 set incsearch
 set hlsearch

@@ -67,3 +67,6 @@
 [submodule "vim/vim.symlink/bundle/ghcmod-vim"]
 	path = vim/vim.symlink/bundle/ghcmod-vim
 	url = git@github.com:eagletmt/ghcmod-vim
+[submodule "vim/vim.symlink/bundle/neco-ghc"]
+	path = vim/vim.symlink/bundle/neco-ghc
+	url = git@github.com:eagletmt/neco-ghc
