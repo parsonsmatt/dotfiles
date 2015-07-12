@@ -114,3 +114,13 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 set scrolloff=5
+
+" Send a command to a fifo named .test_runner
+let g:myTestRunnerCommand = ''
+function MyTestRunner()
+    call system( 'echo "'. g:myTestRunnerCommand . '" > .test_runner' )
+endfunction
+
+nnoremap <Leader>lp :call MyTestRunner()<CR>
+
+set exrc
