@@ -22,4 +22,4 @@ if [ ! -f ~/.oh-my-zsh ]; then
 fi
 
 # remap caps lock to control
-sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"" /etc/default/keyboard 
+sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard 
