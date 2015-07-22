@@ -19,6 +19,9 @@ set-window-option -g window-status-current-fg white
 set-window-option -g window-status-current-bg black
 set -g status-bg blue
 
+# Escape time
+set -s escape-time 0
+
 # bind better pane switching:
 bind-key -n C-Up select-pane -U
 bind-key -n C-Down select-pane -D
