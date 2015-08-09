@@ -29,6 +29,9 @@ set laststatus=2
 command W w
 command Q q
 
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>wq :wq<CR>
+
 " Selecta Ignore
 let SelectaIgnore = ['dist/', 'bower_components/', 'output/', '.git/', '.node_modules/', '.cabal-sandbox', '.stack-work']
 
