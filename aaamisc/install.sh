@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install Google Chrome PPA
 if [ ! hash google-chrome ]; then
