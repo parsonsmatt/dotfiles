@@ -19,4 +19,5 @@ nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
 nnoremap <buffer> <Leader>T :GhcModTypeInsert<CR>
 nnoremap <buffer> <Leader>c :HdevtoolsClear<CR>
 nnoremap <buffer> <Leader>i :HdevtoolsInfo<CR>
-au BufWritePost *.hs :GhcModCheckAndLintAsync
+nnoremap <buffer> <Leader>fa :GhcModLintAsync<CR>
+au BufWritePost *.hs :GhcModCheckAsync
