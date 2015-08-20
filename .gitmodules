@@ -77,3 +77,9 @@
 [submodule "vim/vim.symlink/bundle/YouCompleteMe"]
 	path = vim/vim.symlink/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe
+[submodule "vim/vim.symlink/bundle/vim-pandoc"]
+	path = vim/vim.symlink/bundle/vim-pandoc
+	url = git@github.com:vim-pandoc/vim-pandoc
+[submodule "vim/vim.symlink/bundle/vim-pandoc-syntax"]
+	path = vim/vim.symlink/bundle/vim-pandoc-syntax
+	url = git@github.com:vim-pandoc/vim-pandoc-syntax
