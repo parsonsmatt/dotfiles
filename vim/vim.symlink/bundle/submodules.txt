@@ -1,8 +1,0 @@
-git@github.com:raichoo/haskell-vim
-git@github.com:michaelvila/selecta.vim
-git@github.com:tpope/vim-bundler
-git@github.com:tpope/vim-fugitive
-git@github.com:pangloss/vim-javascript
-git@github.com:tpope/vim-rails
-git@github.com:vim-ruby/vim-ruby
-
