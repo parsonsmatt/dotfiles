@@ -7,9 +7,6 @@
 [submodule "vim/vim.symlink/bundle/haskell-vim"]
 	path = vim/vim.symlink/bundle/haskell-vim
 	url = https://github.com/raichoo/haskell-vim
-[submodule "vim/vim.symlink/bundle/vim-bundler"]
-	path = vim/vim.symlink/bundle/vim-bundler
-	url = git@github.com:tpope/vim-bundler
 [submodule "vim/vim.symlink/bundle/vim-fugitive"]
 	path = vim/vim.symlink/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive
@@ -61,9 +58,6 @@
 [submodule "vim/vim.symlink/bundle/ghcmod-vim"]
 	path = vim/vim.symlink/bundle/ghcmod-vim
 	url = git@github.com:eagletmt/ghcmod-vim
-[submodule "vim/vim.symlink/bundle/neco-ghc"]
-	path = vim/vim.symlink/bundle/neco-ghc
-	url = git@github.com:eagletmt/neco-ghc
 [submodule "vim/vim.symlink/bundle/vim-surround"]
 	path = vim/vim.symlink/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround
@@ -71,9 +65,6 @@
 	path = vim/vim.symlink/bundle/vim-hdevtools
 	url = git@github.com:bitc/vim-hdevtools
 
-[submodule "vim/vim.symlink/bundle/YouCompleteMe"]
-	path = vim/vim.symlink/bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe
 [submodule "vim/vim.symlink/bundle/vim-pandoc"]
 	path = vim/vim.symlink/bundle/vim-pandoc
 	url = git@github.com:vim-pandoc/vim-pandoc
