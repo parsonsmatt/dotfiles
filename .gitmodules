@@ -52,9 +52,6 @@
 [submodule "vim/vim.symlink/bundle/vim-endwise"]
 	path = vim/vim.symlink/bundle/vim-endwise
 	url = git@github.com:tpope/vim-endwise
-[submodule "vim/vim.symlink/bundle/ag.vim"]
-	path = vim/vim.symlink/bundle/ag.vim
-	url = git@github.com:rking/ag.vim
 [submodule "vim/vim.symlink/bundle/delimitMate"]
 	path = vim/vim.symlink/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate
