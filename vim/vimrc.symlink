@@ -96,14 +96,6 @@ nnoremap <leader>e :SelectaFile<cr>
 nnoremap <leader>v :SelectaVsplit<cr>
 nnoremap <leader>s :SelectaSplit<cr>
 
-" Find all buffers that have been opened.
-" Fuzzy select one of those. Open the selected file with :b.
-nnoremap <leader>b :SelectaBuffer<cr>
-
-" Find previously run commands.
-" Fuzzy select one of those. Run that command with :
-nnoremap <leader>h :SelectaHistoryCommand<cr>
-
 " insearch.vim
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
