@@ -1,12 +1,6 @@
-[submodule "vim/vim.symlink/bundle/vim-colorschemes"]
-        path = vim/vim.symlink/bundle/vim-colorschemes
-        url = http://www.github.com/flazz/vim-colorschemes
 [submodule "vim/vim.symlink/bundle/emmet-vim"]
 	path = vim/vim.symlink/bundle/emmet-vim
 	url = http://www.github.com/mattn/emmet-vim
-[submodule "vim/vim.symlink/bundle/haskell-vim"]
-	path = vim/vim.symlink/bundle/haskell-vim
-	url = https://github.com/raichoo/haskell-vim
 [submodule "vim/vim.symlink/bundle/vim-fugitive"]
 	path = vim/vim.symlink/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive
@@ -22,9 +16,6 @@
 [submodule "vim/vim.symlink/bundle/selecta.vim"]
 	path = vim/vim.symlink/bundle/selecta.vim
 	url = git@github.com:michaelavila/selecta.vim
-[submodule "vim/vim.symlink/bundle/vimproc.vim"]
-	path = vim/vim.symlink/bundle/vimproc.vim
-	url = git@github.com:Shougo/vimproc.vim
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -55,9 +46,6 @@
 [submodule "vim/vim.symlink/bundle/incsearch.vim"]
 	path = vim/vim.symlink/bundle/incsearch.vim
 	url = git@github.com:haya14busa/incsearch.vim
-[submodule "vim/vim.symlink/bundle/ghcmod-vim"]
-	path = vim/vim.symlink/bundle/ghcmod-vim
-	url = git@github.com:eagletmt/ghcmod-vim
 [submodule "vim/vim.symlink/bundle/vim-surround"]
 	path = vim/vim.symlink/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround
