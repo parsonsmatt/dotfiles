@@ -59,6 +59,3 @@
 [submodule "vim/vim.symlink/bundle/vim-pandoc-syntax"]
 	path = vim/vim.symlink/bundle/vim-pandoc-syntax
 	url = git@github.com:vim-pandoc/vim-pandoc-syntax
-[submodule "vim/vim.symlink/bundle/haskell-vim"]
-	path = vim/vim.symlink/bundle/haskell-vim
-	url = git@github.com:neovimhaskell/haskell-vim
