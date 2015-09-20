@@ -4,8 +4,8 @@ set nocompatible
 
 syntax on
 
-colorscheme solarized
 set background=dark
+colorscheme solarized
 set t_ut=
 
 let mapleader="\<space>"
