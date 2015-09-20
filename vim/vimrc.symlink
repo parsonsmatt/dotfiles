@@ -57,7 +57,7 @@ set undodir=~/.vim/undodir
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-let g:syntastic_haskell_checkers=['']
+let g:syntastic_haskell_checkers=['hdevtools']
 let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
 
 " hdevtools
