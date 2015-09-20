@@ -4,15 +4,11 @@ set nocompatible
 
 syntax on
 
-colorscheme gruvbox
+colorscheme solarized
 set background=dark
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
-highlight Conceal ctermbg=NONE
+set t_ut=
 
 let mapleader="\<space>"
-
-map <leader>co :colorscheme 
 
 filetype plugin indent on
 
