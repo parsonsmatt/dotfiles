@@ -5,7 +5,7 @@ set nocompatible
 syntax on
 
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 set t_ut=
 
 let mapleader="\<space>"
