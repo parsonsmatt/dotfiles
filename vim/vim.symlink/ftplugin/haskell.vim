@@ -4,9 +4,9 @@ let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 
-setlocal shiftwidth=4
+setlocal shiftwidth=2
 setlocal expandtab
-setlocal softtabstop=4
+setlocal softtabstop=2
 
 nnoremap <Leader>hs :%!stylish-haskell<CR>
 
