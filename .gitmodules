@@ -65,3 +65,9 @@
 [submodule "vim/vim.symlink/bundle/vim-colors-solarized"]
 	path = vim/vim.symlink/bundle/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized
+[submodule "vim/vim.symlink/bundle/vimproc"]
+	path = vim/vim.symlink/bundle/vimproc
+	url = git@github.com:shougo/vimproc
+[submodule "ghcmod-vim"]
+	path = vim/vim.symlink/bundle/ghcmod-vim
+	url = git@github.com:eagletmt/ghcmod-vim
