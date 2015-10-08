@@ -29,7 +29,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
 
 " Selecta Ignore
-let SelectaIgnore = ['elm-stuff', 'dist/', 'bower_components/', 'output/', '.git/', '.node_modules/', '.cabal-sandbox', '.stack-work']
+let SelectaIgnore = ['elm-stuff', 'dist/', 'bower_components/', 'output/', '.git/', 'node_modules/', '.node_modules/', '.cabal-sandbox', '.stack-work']
 
 " Line numbers
 set number
