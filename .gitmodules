@@ -71,3 +71,6 @@
 [submodule "haskell-vim"]
 	path = vim/vim.symlink/bundle/haskell-vim
 	url = git@github.com:neovimhaskell/haskell-vim
+[submodule "vim/vim.symlink/bundle/elm.vim"]
+	path = vim/vim.symlink/bundle/elm.vim
+	url = git@github.com:lambdatoast/elm.vim
