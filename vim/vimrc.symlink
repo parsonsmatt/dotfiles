@@ -29,7 +29,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
 
 " Selecta Ignore
-let SelectaIgnore = ['dist/', 'bower_components/', 'output/', '.git/', '.node_modules/', '.cabal-sandbox', '.stack-work']
+let SelectaIgnore = ['dist/', 'bower_components/', 'output/', '.git/', 'node_modules/', '.node_modules/', '.cabal-sandbox', '.stack-work']
 
 " Line numbers
 set number
@@ -41,8 +41,8 @@ highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 " Default indentation: 
 set autoindent
 set smartindent
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 " Persistent Undo
