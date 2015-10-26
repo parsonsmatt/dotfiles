@@ -74,3 +74,6 @@
 [submodule "vim/vim.symlink/bundle/elm.vim"]
 	path = vim/vim.symlink/bundle/elm.vim
 	url = git@github.com:lambdatoast/elm.vim
+[submodule "ghcmod-vim"]
+	path = vim/vim.symlink/bundle/ghcmod-vim
+	url = git@github.com:int3/ghcmod-vim
