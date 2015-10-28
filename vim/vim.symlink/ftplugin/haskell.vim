@@ -10,6 +10,8 @@ setlocal softtabstop=2
 
 nnoremap <Leader>hs :%!stylish-haskell<CR>
 
-nnoremap <buffer> <Leader>t :HdevtoolsType<CR>
-nnoremap <buffer> <Leader>c :HdevtoolsClear<CR>
-nnoremap <buffer> <Leader>i :HdevtoolsInfo<CR>
+nnoremap <buffer> <Leader>t :GhcModType<CR>
+nnoremap <buffer> <Leader>c :GhcModClear<CR>
+nnoremap <buffer> <Leader>i :GhcModInfo<CR>
+
+autocmd BufWritePost *.hs :GhcModCheckAndLintAsync

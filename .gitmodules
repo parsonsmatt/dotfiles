@@ -65,12 +65,15 @@
 [submodule "vim/vim.symlink/bundle/vimproc"]
 	path = vim/vim.symlink/bundle/vimproc
 	url = git@github.com:shougo/vimproc
-[submodule "ghcmod-vim"]
-	path = vim/vim.symlink/bundle/ghcmod-vim
-	url = git@github.com:eagletmt/ghcmod-vim
 [submodule "haskell-vim"]
 	path = vim/vim.symlink/bundle/haskell-vim
 	url = git@github.com:neovimhaskell/haskell-vim
+[submodule "neco-ghc"]
+	path = vim/vim.symlink/bundle/neco-ghc
+	url = git@github.com:eagletmt/neco-ghc
 [submodule "vim/vim.symlink/bundle/elm.vim"]
 	path = vim/vim.symlink/bundle/elm.vim
 	url = git@github.com:lambdatoast/elm.vim
+[submodule "ghcmod-vim"]
+	path = vim/vim.symlink/bundle/ghcmod-vim
+	url = git@github.com:int3/ghcmod-vim
