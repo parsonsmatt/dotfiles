@@ -2,7 +2,7 @@ import Control.Applicative
 import Control.Monad
 import Data.Function
 import Data.Maybe
-import Data.List
+import qualified Data.List as L
 
 :set +m
 :set +c
