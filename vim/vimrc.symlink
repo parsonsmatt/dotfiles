@@ -73,11 +73,6 @@ let g:syntastic_cpp_check_header = 1
 " Shortcut to clear search highlight
 nnoremap <leader><leader> :noh<CR><C-L>
 
-" delimitMate 
-let delimitMate_expand_cr = 2
-let delimitMate_matchpairs = "(:),{:}"
-let delimitMate_expand_space = 1
-
 " haskell conceal
 let g:haskell_conceal_wide = 1
 
