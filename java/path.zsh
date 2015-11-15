@@ -1,3 +1,3 @@
 # vi: set noundofile :
 
-export PATH="$PATH:/home/matt/intellij/idea-IC-143.382.35/bin"
+export PATH="$PATH:/home/matt/Downloads/gradle/gradle-2.8/bin/"
