@@ -55,7 +55,8 @@ set undodir=~/.vim/undodir
 " set statusline+=%*
 let g:syntastic_haskell_checkers=[]
 let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
-
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
 " hdevtools
 let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
 
