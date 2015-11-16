@@ -110,4 +110,7 @@ endfunction
 
 nnoremap <Leader>lp :call MyTestRunner()<CR>
 
-set exrc
+" delimitMate 
+let delimitMate_expand_cr = 2
+let delimitMate_matchpairs = "(:),{:}"
+let delimitMate_expand_space = 1
