@@ -74,6 +74,9 @@
 [submodule "ghcmod-vim"]
 	path = vim/vim.symlink/bundle/ghcmod-vim
 	url = git@github.com:int3/ghcmod-vim
-[submodule "vim/vim.symlink/bundle/auto-pairs"]
-	path = vim/vim.symlink/bundle/auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs
+[submodule "delimitMate"]
+	path = vim/vim.symlink/bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate
+[submodule "vim/vim.symlink/bundle/idris-vim"]
+	path = vim/vim.symlink/bundle/idris-vim
+	url = git@github.com:idris-hackers/idris-vim
