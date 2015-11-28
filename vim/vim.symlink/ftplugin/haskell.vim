@@ -58,4 +58,4 @@ syntax match hsStructure
   \ '\s-<<\s'ms=s+1,me=e-1
   \ display conceal cchar=⇺
 
-syntax match hsNiceOperator "\<not\>"                        conceal cchar=¬syntax match hsNiceOperator "\<not\>"                        conceal cchar=¬
+syntax match hsNiceOperator "\<not\>" conceal cchar=¬
