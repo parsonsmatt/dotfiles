@@ -15,6 +15,10 @@ nnoremap <buffer> <Leader>T :GhcModTypeInsert<CR>
 nnoremap <buffer> <Leader>c :GhcModTypeClear<CR>
 nnoremap <buffer> <Leader>i :GhcModInfo<CR>
 
+" Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
 autocmd BufWritePost *.hs :GhcModCheckAndLintAsync
 
 " Disable haskell-vim omnifunc
