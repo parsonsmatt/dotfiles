@@ -18,3 +18,6 @@ let java_minlines = 150
 syn clear javaError
 syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|\*\/"
 syn match javaFuncDef "[^-]->"
+
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+autocmd Filetype java map <leader>b :call javacomplete#GoToDefinition()<CR>
