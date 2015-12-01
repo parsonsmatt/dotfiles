@@ -19,5 +19,6 @@ syn clear javaError
 syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|\*\/"
 syn match javaFuncDef "[^-]->"
 
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-autocmd Filetype java map <leader>b :call javacomplete#GoToDefinition()<CR>
+let g:nailgun_port=2113
+setlocal omnifunc=javacomplete#Complete
+map <leader>b :call javacomplete#GoToDefinition()<CR>
