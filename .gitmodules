@@ -80,6 +80,3 @@
 [submodule "vim/vim.symlink/bundle/idris-vim"]
 	path = vim/vim.symlink/bundle/idris-vim
 	url = git@github.com:idris-hackers/idris-vim
-[submodule "vim/vim.symlink/bundle/javacomplete"]
-	path = vim/vim.symlink/bundle/javacomplete
-	url = git@github.com:adragomir/javacomplete
