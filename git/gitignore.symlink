@@ -1,4 +1,8 @@
 .DS_Store
+.cabal-sandbox
+.stack-work
+cabal.sandbox.config
+
 *~
 [._]*.s[a-w][a-z]
 .*.swp
