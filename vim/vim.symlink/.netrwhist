@@ -1,4 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/matt/Projects/publicsnippets/parser/test'
+let g:netrw_dirhist_cnt =2
 let g:netrw_dirhist_1='/home/matt/.dotfiles/vim/vim.symlink/ftplugin'
+let g:netrw_dirhist_2='/home/matt/Projects/quicklift/ql-ui/.pulp-cache'

@@ -117,4 +117,4 @@ let delimitMate_expand_space = 1
 
 nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
 
-set exrc
+let g:localvimrc_ask = 0
