@@ -83,3 +83,6 @@
 [submodule "vim/vim.symlink/bundle/javacomplete"]
 	path = vim/vim.symlink/bundle/javacomplete
 	url = git@github.com:adragomir/javacomplete
+[submodule "vim/vim.symlink/bundle/vim-localvimrc"]
+	path = vim/vim.symlink/bundle/vim-localvimrc
+	url = https://github.com/embear/vim-localvimrc

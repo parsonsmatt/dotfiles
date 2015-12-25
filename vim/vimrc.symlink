@@ -114,3 +114,7 @@ nnoremap <Leader>lp :call MyTestRunner()<CR>
 let delimitMate_expand_cr = 2
 let delimitMate_matchpairs = "(:),{:}"
 let delimitMate_expand_space = 1
+
+nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
+
+set exrc

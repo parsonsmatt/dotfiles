@@ -21,3 +21,6 @@ syn match javaFuncDef "[^-]->"
 
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 autocmd Filetype java map <leader>b :call javacomplete#GoToDefinition()<CR>
+
+nnoremap <Leader>g :! gradle build<CR>
+nnoremap <Leader>d :! gradle deploy<CR>
