@@ -1,6 +1,7 @@
 "Take care of indents for Java.
 set autoindent
 set si
+set softtabstop=4
 set shiftwidth=4
 "Java anonymous classes. Sometimes, you have to use them.
 set cinoptions+=j1
@@ -19,8 +20,12 @@ syn clear javaError
 syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|\*\/"
 syn match javaFuncDef "[^-]->"
 
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-autocmd Filetype java map <leader>b :call javacomplete#GoToDefinition()<CR>
-
 nnoremap <Leader>g :! gradle build<CR>
 nnoremap <Leader>d :! gradle deploy<CR>
+setlocal omnifunc=javacomplete#Complete
+map <leader>b :call javacomplete#GoToDefinition()<CR>
+let g:nailgun_port=2113
+let g:javacomplete_ng="ng"
+
+nmap <Leader>jr <Plug>(JavaComplete-Imports-RemoveUnused)
+nmap <Leader>ja <Plug>(JavaComplete-Imports-AddMissing)

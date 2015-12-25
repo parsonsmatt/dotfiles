@@ -1,3 +1,4 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =1
 let g:netrw_dirhist_1='/home/matt/Projects/publicsnippets/parser/test'
+let g:netrw_dirhist_1='/home/matt/.dotfiles/vim/vim.symlink/ftplugin'
