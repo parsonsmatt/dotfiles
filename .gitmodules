@@ -89,6 +89,3 @@
 [submodule "vim/vim.symlink/bundle/vim-syntax-shakespeare"]
 	path = vim/vim.symlink/bundle/vim-syntax-shakespeare
 	url = git@github.com:pbrisbin/vim-syntax-shakespeare
-[submodule "vim/vim.symlink/bundle/vim-stylish-haskell"]
-	path = vim/vim.symlink/bundle/vim-stylish-haskell
-	url = git@github.com:nbouscal/vim-stylish-haskell
