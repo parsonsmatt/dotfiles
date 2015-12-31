@@ -86,3 +86,9 @@
 [submodule "vim/vim.symlink/bundle/vim-localvimrc"]
 	path = vim/vim.symlink/bundle/vim-localvimrc
 	url = https://github.com/embear/vim-localvimrc
+[submodule "vim/vim.symlink/bundle/vim-syntax-shakespeare"]
+	path = vim/vim.symlink/bundle/vim-syntax-shakespeare
+	url = git@github.com:pbrisbin/vim-syntax-shakespeare
+[submodule "vim/vim.symlink/bundle/vim-stylish-haskell"]
+	path = vim/vim.symlink/bundle/vim-stylish-haskell
+	url = git@github.com:nbouscal/vim-stylish-haskell
