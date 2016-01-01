@@ -33,7 +33,7 @@
 	url = git@github.com:octol/vim-cpp-enhanced-highlight
 [submodule "vim/vim.symlink/bundle/purescript-vim"]
 	path = vim/vim.symlink/bundle/purescript-vim
-	url = git@github.com:raichoo/purescript-vim
+	url = git@github.com:parsonsmatt/purescript-vim
 [submodule "vim/vim.symlink/bundle/vim-jsx"]
 	path = vim/vim.symlink/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx
@@ -89,3 +89,12 @@
 [submodule "vim/vim.symlink/bundle/rainbow"]
 	path = vim/vim.symlink/bundle/rainbow
 	url = git@github.com:luochen1990/rainbow
+[submodule "vim/vim.symlink/bundle/javacomplete"]
+	path = vim/vim.symlink/bundle/javacomplete
+	url = git@github.com:adragomir/javacomplete
+[submodule "vim/vim.symlink/bundle/vim-localvimrc"]
+	path = vim/vim.symlink/bundle/vim-localvimrc
+	url = https://github.com/embear/vim-localvimrc
+[submodule "vim/vim.symlink/bundle/vim-syntax-shakespeare"]
+	path = vim/vim.symlink/bundle/vim-syntax-shakespeare
+	url = git@github.com:pbrisbin/vim-syntax-shakespeare

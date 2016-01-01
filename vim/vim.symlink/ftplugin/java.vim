@@ -20,6 +20,8 @@ syn clear javaError
 syn match javaError "<<<\|\.\.\|=>\|||=\|&&=\|\*\/"
 syn match javaFuncDef "[^-]->"
 
+nnoremap <Leader>g :! gradle build<CR>
+nnoremap <Leader>d :! gradle deploy<CR>
 setlocal omnifunc=javacomplete#Complete
 map <leader>b :call javacomplete#GoToDefinition()<CR>
 let g:nailgun_port=2113
