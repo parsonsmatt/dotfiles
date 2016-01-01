@@ -3,6 +3,9 @@
 .stack-work
 cabal.sandbox.config
 
+tags
+TAGS
+
 *~
 [._]*.s[a-w][a-z]
 .*.swp
