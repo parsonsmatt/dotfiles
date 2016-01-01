@@ -38,7 +38,7 @@ set numberwidth=2
 highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 
-" Default indentation: 
+" Default indentation:
 set autoindent
 set smartindent
 set softtabstop=2
@@ -110,12 +110,11 @@ endfunction
 
 nnoremap <Leader>lp :call MyTestRunner()<CR>
 
-" delimitMate 
+" delimitMate
 let delimitMate_expand_cr = 2
 let delimitMate_matchpairs = "(:),{:}"
 let delimitMate_expand_space = 1
 
-<<<<<<< HEAD
 " highlight the current line in current window; may slow down redrawing
 " for long lines or large files
 set cursorline
@@ -123,10 +122,10 @@ set cursorline
 " highlight the current column in current window; may slow down redrawing
 " for long lines or large files
 set cursorcolumn
-=======
+
+
 nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
 
 let g:localvimrc_ask = 0
 
 autocmd BufWritePre * :%s/\s\+$//e
->>>>>>> 4cc54f37aebaecb3713f53cc27fb8b048c6bbfb5
