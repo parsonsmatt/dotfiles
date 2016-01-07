@@ -2,7 +2,7 @@
 
 sudo apt-get update
 
-sudo apt-get install nfs-common redshift zsh silversearcher-ag wallch dkms -y
+sudo apt-get install editorconfig nfs-common redshift zsh silversearcher-ag wallch dkms -y
 
 # install oh-my-zsh
 if [ ! -f ~/.oh-my-zsh ]; then
@@ -10,4 +10,4 @@ if [ ! -f ~/.oh-my-zsh ]; then
 fi
 
 # remap caps lock to control
-sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard 
+sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard
