@@ -41,8 +41,8 @@ unset config_files
 
 export TERM=xterm-256color
 
-if [ "$TMUX" = "" ]; then 
-        TERM=xterm-256color tmux 
+if [ "$TMUX" = "" ]; then
+        TERM=xterm-256color tmux
 fi
 
 # Path to your oh-my-zsh installation.
