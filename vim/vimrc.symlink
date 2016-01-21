@@ -129,3 +129,5 @@ nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
 let g:localvimrc_ask = 0
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+set nofoldenable
