@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{setspace}
 $if(fontfamily)$
