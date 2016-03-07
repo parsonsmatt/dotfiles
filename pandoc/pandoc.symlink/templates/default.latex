@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{setspace}
+\usepackage{amsthm}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$

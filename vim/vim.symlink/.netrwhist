@@ -1,15 +1,6 @@
 let g:netrw_dirhistmax  =10
-<<<<<<< HEAD
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/matt/.dotfiles/vim/vim.symlink/ftplugin'
-let g:netrw_dirhist_2='/home/matt/Projects/quicklift/ql-ui/.pulp-cache'
-let g:netrw_dirhist_3='/home/matt/Projects/school/uga-distributed/p1-server/src/main/java/distr/server'
-let g:netrw_dirhist_4='/home/matt/Projects/school/uga-distributed/p1-client'
-let g:netrw_dirhist_5='/home/matt/Projects/school/uga-distributed/p1-client/build'
-let g:netrw_dirhist_6='/home/matt/Projects/school/uga-distributed/p1-client/build/libs'
-=======
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/matt/.dotfiles/vim/vim.symlink/ftplugin'
 let g:netrw_dirhist_2='/home/matt/Projects/quicklift/ql-ui/.pulp-cache'
 let g:netrw_dirhist_3='/home/matt/Projects/uga-distributed/p1-server/src/main/java/distr/server/tasks'
->>>>>>> 7a22d3ce924dc4fc78b37be51b31f95021b289df
+let g:netrw_dirhist_4='/home/matt/Projects/school/uga-distributed/p1-server'
