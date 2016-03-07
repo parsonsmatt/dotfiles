@@ -123,6 +123,7 @@ set cursorline
 " for long lines or large files
 set cursorcolumn
 
+let g:syntastic_python_python_exec = 'usr/bin/python3'
 
 nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
 
