@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/matt/.dotfiles/vim/vim.symlink/ftplugin'
 let g:netrw_dirhist_2='/home/matt/Projects/quicklift/ql-ui/.pulp-cache'
 let g:netrw_dirhist_3='/home/matt/Projects/uga-distributed/p1-server/src/main/java/distr/server/tasks'
 let g:netrw_dirhist_4='/home/matt/Projects/school/uga-distributed/p1-server'
+let g:netrw_dirhist_5='/home/matt/Projects/4760/tcp-flow-control'

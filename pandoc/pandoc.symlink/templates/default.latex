@@ -2,6 +2,8 @@
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{amsthm}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
