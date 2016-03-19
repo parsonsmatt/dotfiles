@@ -55,7 +55,7 @@ set undodir=~/.vim/undodir
 " set statusline+=%*
 let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
 let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
-let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault -hDollar "$@"'
+let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
 let g:syntastic_java_checkers=['javac']
 let g:syntastic_java_javac_config_file_enabled = 1
 " hdevtools
@@ -125,6 +125,7 @@ set cursorline
 " for long lines or large files
 set cursorcolumn
 
+let g:syntastic_python_python_exec = 'usr/bin/python3'
 
 nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
 
