@@ -29,7 +29,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
 
 " Selecta Ignore
-let SelectaIgnore = ['elm-stuff', 'dist/', 'bower_components/', 'output/', '.git/', 'node_modules/', '.node_modules/', '.cabal-sandbox', '.stack-work']
+let SelectaIgnore = ['build', 'elm-stuff', 'dist/', 'bower_components/', 'output/', '.git/', 'node_modules/', '.node_modules/', '.cabal-sandbox', '.stack-work']
 
 " Line numbers
 set number
@@ -79,7 +79,7 @@ nnoremap <leader><leader> :noh<CR><C-L>
 let g:haskell_conceal_wide = 1
 
 " markdown languages
-let g:markdown_fenced_languages = ['haskell', 'javascript', 'ruby', 'c', 'cpp']
+let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp']
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
