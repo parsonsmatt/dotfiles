@@ -3,6 +3,10 @@
 call plug#begin()
 
 " Plug 'benekastah/neomake'
+Plug 'parsonsmatt/vim-hdevtools'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf.vim'
+Plug 'kassio/neoterm'
 Plug 'scrooloose/syntastic'
 Plug 'Raimondi/delimitMate'
 Plug 'haya14busa/incsearch.vim'
@@ -17,7 +21,6 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
-Plug 'idris-hackers/idris-vim'
 Plug 'eagletmt/neco-ghc'
 Plug 'dag/vim2hs'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
@@ -140,3 +143,8 @@ let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wfor
 let g:syntastic_cpp_compiler = "g++"
 let g:syntastic_cpp_check_header = 1
 
+nnoremap <Leader>v :vsplit<cr>
+nnoremap <Leader>s :split<cr>
+nnoremap <Leader>e :Files<cr>
+
+set ruler

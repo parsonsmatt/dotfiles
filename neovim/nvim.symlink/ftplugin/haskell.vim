@@ -43,4 +43,7 @@ syntax match hsStructure
 
 syntax match hsNiceOperator "\<not\>" conceal cchar=¬
 
-
+nnoremap <Leader>t :HdevtoolsType<cr>
+nnoremap <Leader>T :HdevtoolsSig<cr>
+nnoremap <Leader>i :HdevtoolsInfo<cr>
+nnoremap <Leader>c :HdevtoolsClear<cr>
