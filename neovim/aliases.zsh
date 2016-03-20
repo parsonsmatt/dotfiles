@@ -1,2 +1,2 @@
-# alias vi=`which vim`
+alias vi=`which nvim`
 # vi: set noundofile :

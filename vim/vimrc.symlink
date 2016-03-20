@@ -67,6 +67,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
 " cpp config
 let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wformat=2"
 let g:syntastic_cpp_compiler = "g++"
@@ -109,7 +111,6 @@ function MyTestRunner()
     call system( 'echo "'. g:myTestRunnerCommand . '" > .test_runner' )
 endfunction
 
-let g:syntastic_python_python_exec = '/usr/bin/python3'
 nnoremap <Leader>lp :call MyTestRunner()<CR>
 
 " delimitMate
@@ -124,8 +125,6 @@ set cursorline
 " highlight the current column in current window; may slow down redrawing
 " for long lines or large files
 set cursorcolumn
-
-let g:syntastic_python_python_exec = 'usr/bin/python3'
 
 nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
 

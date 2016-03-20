@@ -147,3 +147,5 @@ export ELM_HOME='/usr/lib/node_modules/elm/share'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 bindkey '^R' history-incremental-search-backward
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
