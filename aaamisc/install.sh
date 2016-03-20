@@ -2,7 +2,7 @@
 
 sudo apt-get update
 
-sudo apt-get install inotify-tools editorconfig nfs-common redshift zsh silversearcher-ag wallch dkms -y
+sudo apt-get install xclip inotify-tools editorconfig nfs-common redshift zsh silversearcher-ag wallch dkms -y
 
 # install oh-my-zsh
 if [ ! -f ~/.oh-my-zsh ]; then
