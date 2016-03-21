@@ -1,43 +1,46 @@
 " Fresh neovim configuration
 
+
 call plug#begin()
 
-" Plug 'benekastah/neomake'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
-Plug 'parsonsmatt/vim-hdevtools'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
-" Plug 'junegunn/fzf.vim'
-Plug 'kassio/neoterm'
-Plug 'scrooloose/syntastic'
-Plug 'Raimondi/delimitMate'
 Plug 'haya14busa/incsearch.vim'
-Plug 'tpope/vim-markdown'
+Plug 'kassio/neoterm'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'parsonsmatt/vim2hs'
+Plug 'parsonsmatt/vim-hdevtools'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
+Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'tpope/vim-surround'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'itchyny/vim-haskell-indent'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'editorconfig/editorconfig-vim'
+
+" Colorschemes
+Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
-Plug 'eagletmt/neco-ghc'
-Plug 'dag/vim2hs'
-Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
+Plug 'atelierbram/vim-colors_duotones'
+Plug 'stulzer/heroku-colorscheme'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 filetype plugin indent on
-
 syntax on
 
 set background=dark
 colorscheme gruvbox
-
 let mapleader = ' '
 
 nnoremap <silent> <leader><leader> :noh<CR><C-l>
@@ -93,6 +96,7 @@ set cursorcolumn
 set scrolloff=5
 " haskell conceal
 let g:haskell_conceal_wide = 1
+let g:haskell_conceal_bad = 1
 
 " Use Haskell for PureScript
 au BufNewFile,BufRead *.purs setf haskell
@@ -109,20 +113,7 @@ map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" neomake
-" autocmd! BufWritePost * Neomake
-" 
-" let g:neomake_haskell_hlint_maker = {
-"     \ 'args': [ '%:p', '-XQuasiQuotes', '-XTemplateHaskell', '-hGeneralise', '-hDefault'],
-"     \ 'errorformat': '%W%f:%l:%v: Warning: %m,' .
-"             \ '%I%f:%l:%v: Suggestion: %m,' . ''
-"     \ }
-
-
 " Syntastic settings:
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
 let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
 let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
 let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
@@ -160,3 +151,28 @@ let g:haskell_tabular = 1
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
+
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 5
+let g:haskell_indent_let = 4
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_guard = 4
+set laststatus=2
+
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+  endif
+endif
