@@ -4,6 +4,8 @@ let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 
+let g:haskell_enable_recursivedo = 1
+let g:haskell_enable_quantification = 1
 
 syntax match hsNiceOperator "\<forall\>" display conceal cchar=∀
 syntax match hsNiceOperator "`elem`" conceal cchar=∈

@@ -3,9 +3,10 @@
 call plug#begin()
 
 " Plug 'benekastah/neomake'
+Plug 'godlygeek/tabular'
 Plug 'parsonsmatt/vim-hdevtools'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+" Plug 'junegunn/fzf.vim'
 Plug 'kassio/neoterm'
 Plug 'scrooloose/syntastic'
 Plug 'Raimondi/delimitMate'
@@ -16,15 +17,15 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'itchyny/vim-haskell-indent'
 Plug 'eagletmt/ghcmod-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
 Plug 'eagletmt/neco-ghc'
 Plug 'dag/vim2hs'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
-Plug 'raichoo/ghcid-neovim'
 
 call plug#end()
 
@@ -145,6 +146,17 @@ let g:syntastic_cpp_check_header = 1
 
 nnoremap <Leader>v :vsplit<cr>
 nnoremap <Leader>s :split<cr>
-nnoremap <Leader>e :Files<cr>
+nnoremap <Leader>e :CtrlP<cr>
 
 set ruler
+
+" delimitMate
+let delimitMate_expand_cr = 2
+let delimitMate_matchpairs = "(:),{:}"
+let delimitMate_expand_space = 1
+
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
