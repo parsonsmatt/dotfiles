@@ -49,3 +49,5 @@ tramp
 
 tags
 TAGS
+
+**/*/\.\~lock*

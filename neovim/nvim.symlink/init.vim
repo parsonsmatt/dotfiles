@@ -26,15 +26,11 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Colorschemes
-Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
-Plug 'atelierbram/vim-colors_duotones'
-Plug 'stulzer/heroku-colorscheme'
-Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
-" let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 filetype plugin indent on
 syntax on
@@ -102,6 +98,7 @@ let g:haskell_conceal_bad = 1
 au BufNewFile,BufRead *.purs setf haskell
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_working_path_mode = ''
 
 set nofoldenable
 
@@ -176,3 +173,28 @@ else " no gui
     inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
   endif
 endif
+
+" Neoterm
+let g:neoterm_position = 'vertical'
+let g:neoterm_automap_keys = '<space>rr'
+
+nnoremap <silent> <leader>rf :TREPLSendFile<cr>
+nnoremap <silent> <leader>rs :TREPLSend<cr>
+vnoremap <silent> <leader>rs :TREPLSend<cr>
+
+" Useful maps
+" hide/close terminal
+nnoremap <silent> <leader>rh :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> <leader>rl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> <leader>rc :call neoterm#kill()<cr>
+
+:tnoremap <A-h> <C-\><C-n><C-w>h
+:tnoremap <A-j> <C-\><C-n><C-w>j
+:tnoremap <A-k> <C-\><C-n><C-w>k
+:tnoremap <A-l> <C-\><C-n><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
