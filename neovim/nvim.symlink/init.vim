@@ -10,8 +10,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kassio/neoterm'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'parsonsmatt/vim2hs'
+" Plug 'neovimhaskell/haskell-vim'
 Plug 'parsonsmatt/vim-hdevtools'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'Raimondi/delimitMate'
@@ -24,6 +24,8 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'parsonsmatt/purescript-vim'
+Plug 'FrigoEU/psc-ide-vim'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
@@ -94,9 +96,6 @@ set scrolloff=5
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_bad = 1
 
-" Use Haskell for PureScript
-au BufNewFile,BufRead *.purs setf haskell
-
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_working_path_mode = ''
 
@@ -143,11 +142,15 @@ let delimitMate_expand_cr = 2
 let delimitMate_matchpairs = "(:),{:}"
 let delimitMate_expand_space = 1
 
-let g:haskell_tabular = 1
-
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
+
+
+" Haskell:
+nnoremap <leader>hs :%!stylish-haskell<cr>
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 5
@@ -157,8 +160,8 @@ let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 4
 set laststatus=2
 
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+let g:haskell_tabular = 1
+
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -190,11 +193,11 @@ nnoremap <silent> <leader>rl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> <leader>rc :call neoterm#kill()<cr>
 
-:tnoremap <A-h> <C-\><C-n><C-w>h
-:tnoremap <A-j> <C-\><C-n><C-w>j
-:tnoremap <A-k> <C-\><C-n><C-w>k
-:tnoremap <A-l> <C-\><C-n><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
