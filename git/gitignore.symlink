@@ -1,4 +1,11 @@
 .DS_Store
+.cabal-sandbox
+.stack-work
+cabal.sandbox.config
+
+tags
+TAGS
+
 *~
 [._]*.s[a-w][a-z]
 .*.swp
@@ -39,3 +46,8 @@ tramp
 
 # cask packages
 .cask/
+
+tags
+TAGS
+
+**/*/\.\~lock*

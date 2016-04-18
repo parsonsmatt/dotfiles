@@ -29,7 +29,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
 
 " Selecta Ignore
-let SelectaIgnore = ['elm-stuff', 'dist/', 'bower_components/', 'output/', '.git/', 'node_modules/', '.node_modules/', '.cabal-sandbox', '.stack-work']
+let SelectaIgnore = ['build', 'elm-stuff', 'dist/', 'bower_components/', 'output/', '.git/', 'node_modules/', '.node_modules/', '.cabal-sandbox', '.stack-work']
 
 " Line numbers
 set number
@@ -38,11 +38,11 @@ set numberwidth=2
 highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 
-" Default indentation: 
+" Default indentation:
 set autoindent
 set smartindent
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 " Persistent Undo
@@ -53,8 +53,9 @@ set undodir=~/.vim/undodir
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-let g:syntastic_haskell_checkers=[]
+let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
 let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
+let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
 let g:syntastic_java_checkers=['javac']
 let g:syntastic_java_javac_config_file_enabled = 1
 " hdevtools
@@ -65,6 +66,8 @@ let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " cpp config
 let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wformat=2"
@@ -78,7 +81,7 @@ nnoremap <leader><leader> :noh<CR><C-L>
 let g:haskell_conceal_wide = 1
 
 " markdown languages
-let g:markdown_fenced_languages = ['haskell', 'javascript', 'ruby', 'c', 'cpp']
+let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp']
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
@@ -110,7 +113,23 @@ endfunction
 
 nnoremap <Leader>lp :call MyTestRunner()<CR>
 
-" delimitMate 
+" delimitMate
 let delimitMate_expand_cr = 2
 let delimitMate_matchpairs = "(:),{:}"
 let delimitMate_expand_space = 1
+
+" highlight the current line in current window; may slow down redrawing
+" for long lines or large files
+set cursorline
+
+" highlight the current column in current window; may slow down redrawing
+" for long lines or large files
+set cursorcolumn
+
+nnoremap <Leader>ag "ayew:! ag "<C-r>a"<CR>
+
+let g:localvimrc_ask = 0
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+set nofoldenable
