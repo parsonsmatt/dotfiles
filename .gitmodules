@@ -80,6 +80,9 @@
 [submodule "vim/vim.symlink/bundle/idris-vim"]
 	path = vim/vim.symlink/bundle/idris-vim
 	url = git@github.com:idris-hackers/idris-vim
+[submodule "vim/vim.symlink/bundle/vim-javacomplete2"]
+	path = vim/vim.symlink/bundle/vim-javacomplete2
+	url = git@github.com:artur-shaik/vim-javacomplete2
 [submodule "vim/vim.symlink/bundle/vim-clojure-static"]
 	path = vim/vim.symlink/bundle/vim-clojure-static
 	url = git@github.com:guns/vim-clojure-static
