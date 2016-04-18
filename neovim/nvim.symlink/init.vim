@@ -61,8 +61,8 @@ set ignorecase
 set laststatus=2
 
 " Enough of this!
-command W w
-command Q q
+command! W w
+command! Q q
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
