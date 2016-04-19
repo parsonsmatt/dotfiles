@@ -17,6 +17,7 @@ main = do
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
+        , focusedBorderColor = "purple"
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")

@@ -9,3 +9,6 @@ vim/vim.symlink/undodir/**
 git/gitconfig.symlink
 *.log
 vim/vim.symlink/undodir/**
+
+**/*/xmonad.o
+
