@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Selects a random image from the ~/Pictures directory
+
+echo $(find "$1" -type f | grep '.[jpg,png]' | shuf -n 1)
