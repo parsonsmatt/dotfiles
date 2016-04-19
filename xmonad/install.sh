@@ -2,4 +2,8 @@
 
 # Script to install xmonad and all dependencies.
 
-sudo apt-get install -y xmonad libghc-xmonad-contrib-dev libghc-xmonad-dev xmobar suckless-tools xscreensaver stalonetray
+sudo apt-get install -y xmonad libghc-xmonad-contrib-dev libghc-xmonad-dev suckless-tools xscreensaver stalonetray libiw-dev libasound2-dev c2hs libxpm-dev xbacklight
+
+cabal install xmonad-extras
+cabal install alsa-core -f-pkgConfig
+cabal install xmobar -fall_extensions

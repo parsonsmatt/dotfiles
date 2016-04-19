@@ -1,20 +1,19 @@
 #!/bin/bash
 
-# Load resources
+# # Load resources
+# 
+# xrdb -merge .Xresources
+# xmodmap -e "remove Lock = Caps_Lock"
+# xmodmap -e "keysym Caps_Lock = Control_L"
+# xmodmap -e "add Control = Control_L"
+# 
+# # Set up an icon tray
+# stalonetray &
+# 
+# if [ -x /usr/bin/nm-applet ] ; then
+#    nm-applet --sm-disable &
+# fi
+# 
+# exec xmonad
 
-xrdb -merge .Xresources
-xmodmap -e "remove Lock = Caps_Lock"
-xmodmap -e "keysym Caps_Lock = Control_L"
-xmodmap -e "add Control = Control_L"
-# Set up an icon tray
-stalonetray &
-
-# Fire up apps
-
-xscreensaver -no-splash &
-
-if [ -x /usr/bin/nm-applet ] ; then
-   nm-applet --sm-disable &
-fi
-
-exec xmonad
+redshift &
