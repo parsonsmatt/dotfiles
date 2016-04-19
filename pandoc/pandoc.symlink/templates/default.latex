@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[9pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{amsthm}
