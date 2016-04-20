@@ -42,7 +42,7 @@ main = do
         } `additionalKeys` myKeys
 
 myKeyBindings = 
-        [ ((myModMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
+        [ ((myModMask .|. shiftMask, xK_z), spawn "gnome-screensaver-command --lock; xset dpms force off")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
         , ((0, xF86XK_AudioLowerVolume), void $ lowerVolume 1)
@@ -56,13 +56,11 @@ myModMask = mod4Mask
 
 myWorkspaces =
   [
-    "7:Chat",  "8:Dbg", "9:Pix",
-    "4:Docs",  "5:Dev", "6:Web",
-    "1:Term",  "2:Hub", "3:Mail",
+    "7:Socl",  "8:Musc", "9:PDF",
+    "4:GHCi",  "5:Dev", "6:PDF",
+    "1:Term",  "2:Term", "3:File",
     "0:VM",    "Extr1", "Extr2"
   ]
-
-startup = "5:Dev"
 
 numPadKeys =
   [

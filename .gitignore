@@ -11,4 +11,5 @@ git/gitconfig.symlink
 vim/vim.symlink/undodir/**
 
 **/*/xmonad.o
-
+xmonad/xmonad.symlink/xmonad.hi
+xmonad/xmonad.symlink/xmonad-x86_64-linux
