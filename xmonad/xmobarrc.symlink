@@ -1,6 +1,6 @@
--- vi:set filetype=haskell
+-- vi:filetype=haskell
 Config
-    { font = "xft:Source Code Pro:size=10:antialias=false"
+    { font = "xft:Source Code Pro:size=9:antialias=false"
     , borderColor = "black"
     , border = TopB
     , bgColor = "black"
@@ -29,13 +29,10 @@ Config
             ] 50
         , Run StdinReader
         , Run Date "%A, %B %_d '%y | %r"  "date" 10
-        , Run Wireless "wlan0"
-            [ "-t", "'<essid>' <qualityvbar>"
-            ] 10
         , Run Volume "default" "Master" [] 5
         ]
     , sepChar = "%"
     , alignSep = "}{"
     , template =
-        "%StdinReader% | }{ %default:Master% | %wlan0wi% | %date% | %battery% | %KAHN%"
+        "%StdinReader% | }{ %default:Master% | %date% | %battery% | %KAHN% |     "
     }

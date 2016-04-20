@@ -2,15 +2,44 @@
 
 # Load resources
 xrdb -merge .Xresources
+
+# Remap keys
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "keysym Caps_Lock = Control_L"
 xmodmap -e "add Control = Control_L"
 
+# Start window compositing
+xcompmgr -n &
+
+xrandr --output LVDS-1 --auto --primary
+
+# If we find that a screen is connected via VGA, activate it and position it
+# to the left of the primary screen.
+xrandr | grep 'VGA-1 connected' | ifne xrandr --output VGA-1 --auto --left-of LVDS-1
+
+
+
+# If we find that a screen is connected via DVI, activate it and position it
+# to the left of the primary screen.
+xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS-1
+
+
 # Background
 feh --bg-scale $(random-background-image ~/Pictures) &
 
+# redshift pls
+redshift -l 33:-84 &
+
 # Set up an icon tray
-stalonetray &
+stalonetray \
+  --icon-gravity E \
+  --geometry 3x1-0+0 \
+  --max-geometry 3x1-0+0 \
+  --background '#000000' \
+  --skip-taskbar \
+  --icon-size 20 \
+  --kludges force_icons_size \
+  --window-strut none &
 
 if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
