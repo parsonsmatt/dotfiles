@@ -30,16 +30,19 @@ main = do
     xmproc <- spawnPipe "xmobar"
 
     xmonad $ defaultConfig
-        { manageHook = manageDocks <+> manageHook defaultConfig
+        { manageHook = 
+            manageDocks 
+            <+> manageHook defaultConfig
+            <+> composeAll myManagementHooks
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
         , workspaces = myWorkspaces
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
-        , modMask = myModMask     -- Rebind Mod to the Windows key
+        , modMask = myModMask
         , focusedBorderColor = "purple"
-        } `additionalKeys` myKeys
+        } `additionalKeys` navKeys myKeyBindings
 
 myKeyBindings = 
         [ ((myModMask .|. shiftMask, xK_z), spawn "gnome-screensaver-command --lock; xset dpms force off")
@@ -52,30 +55,27 @@ myKeyBindings =
         , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
         ]
 
-myModMask = mod4Mask
+myModMask = mod1Mask
 
 myWorkspaces =
-  [
-    "7:Socl",  "8:Musc", "9:PDF",
-    "4:GHCi",  "5:Dev", "6:PDF",
-    "1:Term",  "2:Term", "3:File",
-    "0:VM",    "Extr1", "Extr2"
+  [ "7:Web",  "8:Web", "9:MP3"
+  , "4:GHCi",  "5:Dev", "6:PDF"
+  , "1:Term",  "2:Term", "3:File"
+  ,  "0:VM",    "Extr1", "Extr2"
   ]
 
 numPadKeys =
-  [
-    xK_KP_Home, xK_KP_Up, xK_KP_Page_Up
-    , xK_KP_Left, xK_KP_Begin,xK_KP_Right
-    , xK_KP_End, xK_KP_Down, xK_KP_Page_Down
-    , xK_KP_Insert, xK_KP_Delete, xK_KP_Enter
+  [ xK_KP_Home,   xK_KP_Up,     xK_KP_Page_Up
+  , xK_KP_Left,   xK_KP_Begin,  xK_KP_Right
+  , xK_KP_End,    xK_KP_Down,   xK_KP_Page_Down
+  , xK_KP_Insert, xK_KP_Delete, xK_KP_Enter
   ]
 
 numKeys =
-  [
-    xK_7, xK_8, xK_9
-    , xK_4, xK_5, xK_6
-    , xK_1, xK_2, xK_3
-    , xK_0, xK_minus, xK_equal
+  [ xK_7, xK_8, xK_9
+  , xK_4, xK_5, xK_6
+  , xK_1, xK_2, xK_3
+  , xK_0, xK_minus, xK_equal
   ]
 
 -- Here, some magic occurs that I once grokked but has since
@@ -83,7 +83,7 @@ numKeys =
 -- that we are telling xmonad how to navigate workspaces,
 -- how to send windows to different workspaces,
 -- and what keys to use to change which monitor is focused.
-myKeys = myKeyBindings ++
+navKeys k = k ++
   [
     ((m .|. myModMask, k), windows $ f i)
        | (i, k) <- zip myWorkspaces numPadKeys
@@ -102,3 +102,11 @@ myKeys = myKeyBindings ++
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
   ]
 
+myManagementHooks :: [ManageHook]
+myManagementHooks =
+  [ resource =? "synapse" --> doIgnore
+  , className =? "google-chrome" --> doShiftAndGo "7:Web"
+  , className =? "Firefox" --> doShiftAndGo "8:Web"
+  ]
+
+doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift

@@ -1,11 +1,12 @@
 -- vi:filetype=haskell
 Config
     { font = "xft:Source Code Pro:size=9:antialias=false"
+    , lowerOnStart = False
     , borderColor = "black"
     , border = TopB
     , bgColor = "black"
     , fgColor = "#cccccc"
-    , position = TopW L 100
+    , position = TopW L 96
     , commands =
         [ Run Weather "KAHN" 
             [ "-t", "<tempF>°F"
@@ -26,6 +27,7 @@ Config
             , "-o", "<left>% (<timeleft>)"
             , "-O", "<fc=blue>heyoo</fc>"
             , "-i", "<fc=green>:D</fc>"
+            , "-p", "blue"
             ] 50
         , Run StdinReader
         , Run Date "%A, %B %_d '%y | %r"  "date" 10
