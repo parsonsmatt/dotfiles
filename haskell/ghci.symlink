@@ -11,4 +11,7 @@ import Control.Arrow
 :set prompt "λ> "
 :set prompt2 "λ| "
 
-:def hoogle return . (++ "| head -n 30") . (":! hoogle " ++) . show
+let ghciEscapeShellArg arg = "'" ++ concatMap (\c -> if c == '\'' then "'\"'\"'" else [c]) arg ++ "'"
+:def! hoogle return . (":! hoogle --color --count=15 " ++) . ghciEscapeShellArg
+
+:def! doc return . (":! hoogle --info --color " ++) . ghciEscapeShellArg
