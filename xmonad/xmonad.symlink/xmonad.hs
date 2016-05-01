@@ -107,6 +107,9 @@ myManagementHooks =
   [ resource =? "synapse" --> doIgnore
   , className =? "google-chrome" --> doShiftAndGo "7:Web"
   , className =? "Firefox" --> doShiftAndGo "8:Web"
+  , className =? "nautilus" --> doShiftAndGo "3:File"
+  , className =? "Nautilus" --> doShiftAndGo "3:File"
+  , className =? "Evince" --> doShiftAndGo "6:PDF"
   ]
 
 doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
