@@ -1,4 +1,0 @@
-
-xmonad.hs:13:1: Warning:
-    Module ‘XMonad.Hooks.ICCCMFocus’ is deprecated:
-      XMonad.Hooks.ICCCMFocus: xmonad>0.10 core merged issue 177

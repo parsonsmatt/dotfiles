@@ -6,7 +6,7 @@ Config
     , border = TopB
     , bgColor = "black"
     , fgColor = "#cccccc"
-    , position = TopW L 96
+    , position = TopW R 96
     , commands =
         [ Run Weather "KAHN" 
             [ "-t", "<tempF>°F"
@@ -36,5 +36,5 @@ Config
     , sepChar = "%"
     , alignSep = "}{"
     , template =
-        "%StdinReader% | }{ %default:Master% | %date% | %battery% | %KAHN% |     "
+        "%StdinReader% | }{ %default:Master% | %date% | %battery% | %KAHN% "
     }

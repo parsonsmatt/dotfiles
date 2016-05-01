@@ -28,21 +28,22 @@ xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS
 
 
 # Background
-feh --bg-scale $(random-background-image ~/Pictures) &
+feh --bg-scale "$(~/.dotfiles/bin/random-background-image ~/Pictures/Wallpapers)" &
 
 # redshift pls
 redshift -l 33:-84 &
 
 # Set up an icon tray
-stalonetray \
-  --icon-gravity E \
-  --geometry 3x1-0+0 \
-  --max-geometry 3x1-0+0 \
-  --background '#000000' \
-  --skip-taskbar \
-  --icon-size 20 \
-  --kludges force_icons_size \
-  --window-strut none &
+stalonetray --sticky \
+    --icon-gravity E \
+    --geometry 4x1+0+0 \
+    --max-geometry 3x1-0+0 \
+    --background '#000000' \
+    --skip-taskbar \
+    --icon-size 20 \
+    --window-strut none \
+    --window-strut top \
+    --icon-gravity W
 
 if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &

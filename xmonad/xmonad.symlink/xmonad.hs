@@ -10,7 +10,7 @@ import XMonad
 import XMonad.Actions.Plane
 import XMonad.Actions.Volume
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ICCCMFocus
+-- import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.UrgencyHook
@@ -27,14 +27,14 @@ import XMonad.Util.Run
 
 main :: IO ()
 main = do
-    xmproc <- spawnPipe "xmobar"
+    xmproc <- spawnPipe "~/.cabal/bin/xmobar"
 
-    xmonad $ defaultConfig
+    xmonad $ def
         { manageHook = 
             manageDocks 
-            <+> manageHook defaultConfig
+            <+> manageHook def
             <+> composeAll myManagementHooks
-        , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , layoutHook = avoidStruts  $  layoutHook def
         , workspaces = myWorkspaces
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
