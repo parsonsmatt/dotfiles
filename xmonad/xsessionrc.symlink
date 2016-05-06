@@ -3,37 +3,50 @@
 # Load resources
 xrdb -merge .Xresources
 
+function log {
+    echo $1 >> ~/.xsessionrc-log
+}
+
+log "remapping keys"
+
 # Remap keys
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "keysym Caps_Lock = Control_L"
 xmodmap -e "add Control = Control_L"
 
+log "window compositing"
 # Start window compositing
 xcompmgr -n &
 
+log "eval dbussing"
 eval `dbus-launch --auto-syntax`
 
+log "xrandr thing"
 xrandr --output LVDS-1 --auto --primary
 
+log "vga??"
 # If we find that a screen is connected via VGA, activate it and position it
 # to the left of the primary screen.
 xrandr | grep 'VGA-1 connected' | ifne xrandr --output VGA-1 --auto --left-of LVDS-1
 
-#dropbox
+log "dropbox"
 dropbox start
 
+log "dvi conn"
 # If we find that a screen is connected via DVI, activate it and position it
 # to the left of the primary screen.
 xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS-1
 
 
+log "setting background"
 # Background
 feh --bg-scale "$(~/.dotfiles/bin/random-background-image ~/Pictures/Wallpapers)" &
 
-# redshift pls
+
+log "redshift pls"
 redshift -l 33:-84 &
 
-# Set up an icon tray
+log "icon tray pls"
 stalonetray --sticky \
     --icon-gravity E \
     --geometry 4x1+0+0 \
@@ -43,13 +56,16 @@ stalonetray --sticky \
     --icon-size 20 \
     --window-strut none \
     --window-strut top \
-    --icon-gravity W
+    --icon-gravity W &
 
 if [ -x /usr/bin/nm-applet ] ; then
-   nm-applet --sm-disable &
+    log "network applet" 
+    nm-applet --sm-disable &
 fi
 
+log "autolocking"
 xautolock -time 10 -locker "gnome-screensaver-command -l" -notify 10 \
-  -notifier "notify-send -t 5000 -i gtk-dialog-info 'Locking in 10 seconds'"
+  -notifier "notify-send -t 5000 -i gtk-dialog-info 'Locking in 10 seconds'" &
 
+log "beginning xmonad"
 exec xmonad
