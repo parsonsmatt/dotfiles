@@ -1,4 +1,3 @@
-
 import Control.Monad
 import Data.Ratio ((%))
 import Graphics.X11.ExtraTypes.XF86
@@ -10,7 +9,6 @@ import XMonad
 import XMonad.Actions.Plane
 import XMonad.Actions.Volume
 import XMonad.Hooks.DynamicLog
--- import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.UrgencyHook
@@ -105,8 +103,8 @@ navKeys k = k ++
 myManagementHooks :: [ManageHook]
 myManagementHooks =
   [ resource =? "synapse" --> doIgnore
-  , className =? "google-chrome" --> doShiftAndGo "7:Web"
-  , className =? "Firefox" --> doShiftAndGo "8:Web"
+  , className =? "google-chrome" --> doShiftAndGo "8:Web"
+  , className =? "Firefox" --> doShiftAndGo "7:Web"
   , className =? "nautilus" --> doShiftAndGo "3:File"
   , className =? "Nautilus" --> doShiftAndGo "3:File"
   , className =? "Evince" --> doShiftAndGo "6:PDF"
