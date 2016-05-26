@@ -1,5 +1,7 @@
 " Fresh neovim configuration
 
+let mapleader = ' '
+let maplocalleader = ','
 
 call plug#begin()
 
@@ -39,7 +41,6 @@ syntax on
 
 set background=dark
 colorscheme gruvbox
-let mapleader = ' '
 
 nnoremap <silent> <leader><leader> :noh<CR><C-l>
 
@@ -201,3 +202,10 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+imap <buffer> \forall ∀ 
+imap <buffer> \to → 
+imap <buffer> \lambda λ 
+imap <buffer> \Sigma Σ 
+imap <buffer> \exists ∃ 
+imap <buffer> \equiv ≡
