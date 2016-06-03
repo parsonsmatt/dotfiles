@@ -144,3 +144,9 @@ export ELM_HOME='/usr/lib/node_modules/elm/share'
 bindkey '^R' history-incremental-search-backward
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
+
+
+redshift -l 33:-84 &
