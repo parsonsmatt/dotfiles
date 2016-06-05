@@ -43,7 +43,7 @@ main = do
         } `additionalKeys` navKeys myKeyBindings
 
 myKeyBindings = 
-        [ ((myModMask .|. shiftMask, xK_z), spawn "gnome-screensaver-command --lock; xset dpms force off")
+        [ ((myModMask .|. shiftMask, xK_l), spawn "gnome-screensaver-command --lock; xset dpms force off")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
         , ((0, xF86XK_AudioLowerVolume), void $ lowerVolume 1)

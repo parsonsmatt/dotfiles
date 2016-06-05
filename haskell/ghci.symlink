@@ -12,6 +12,7 @@ import Control.Arrow
 :set prompt2 "λ| "
 
 let ghciEscapeShellArg arg = "'" ++ concatMap (\c -> if c == '\'' then "'\"'\"'" else [c]) arg ++ "'"
+
 :def! hoogle return . (":! hoogle --color --count=15 " ++) . ghciEscapeShellArg
 
 :def! doc return . (":! hoogle --info --color " ++) . ghciEscapeShellArg
