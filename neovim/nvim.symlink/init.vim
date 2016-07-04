@@ -3,22 +3,27 @@
 let mapleader = ' '
 let maplocalleader = ','
 
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
 call plug#begin()
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'eagletmt/ghcmod-vim'
+" Plug '~/Projects/intero-neovim'
+"
 Plug 'eagletmt/neco-ghc'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'haya14busa/incsearch.vim'
 Plug 'kassio/neoterm'
 Plug 'parsonsmatt/vim2hs'
-" Plug 'neovimhaskell/haskell-vim'
-Plug 'parsonsmatt/vim-hdevtools'
+Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
-"Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
@@ -97,13 +102,10 @@ set scrolloff=5
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_bad = 1
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_working_path_mode = ''
-
 set nofoldenable
 
 " markdown languages
-let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp']
+let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
 " incsearch.vim
 map / <Plug>(incsearch-forward)
@@ -134,7 +136,7 @@ let g:syntastic_cpp_check_header = 1
 
 nnoremap <Leader>v :vsplit<cr>
 nnoremap <Leader>s :split<cr>
-nnoremap <Leader>e :CtrlP<cr>
+nnoremap <Leader>e :FZF<cr>
 
 set ruler
 
@@ -209,3 +211,6 @@ imap <buffer> \lambda λ
 imap <buffer> \Sigma Σ 
 imap <buffer> \exists ∃ 
 imap <buffer> \equiv ≡
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
