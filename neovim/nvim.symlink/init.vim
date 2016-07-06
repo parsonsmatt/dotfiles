@@ -8,7 +8,7 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-" Plug '~/Projects/intero-neovim'
+Plug '~/Projects/intero-neovim'
 "
 Plug 'eagletmt/neco-ghc'
 Plug 'editorconfig/editorconfig-vim'
