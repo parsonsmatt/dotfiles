@@ -24,7 +24,6 @@ Plug 'parsonsmatt/vim2hs'
 Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'Raimondi/delimitMate'
-" Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
