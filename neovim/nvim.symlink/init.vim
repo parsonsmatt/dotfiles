@@ -8,8 +8,8 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-Plug '~/Projects/intero-neovim'
-"
+" Plug '~/Projects/intero-neovim'
+
 Plug 'eagletmt/neco-ghc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -214,3 +214,12 @@ imap <buffer> \equiv ≡
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+
+nnoremap <Leader>hio :InteroOpen<CR>
+nnoremap <Leader>hik :InteroKill<CR>
+nnoremap <Leader>hic :InteroHide<CR>
+nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
+nnoremap <Leader>hie :InteroEval<CR>
+nnoremap <Leader>hit :InteroGenericType<CR>
+nnoremap <Leader>hip :InteroResponse<CR>
