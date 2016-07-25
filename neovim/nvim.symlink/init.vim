@@ -8,8 +8,7 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-Plug '~/Projects/intero-neovim'
-
+Plug 'parsonsmatt/intero-neovim'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
