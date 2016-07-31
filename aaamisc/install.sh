@@ -2,7 +2,7 @@
 
 sudo apt-get update
 
-sudo apt-get install xclip inotify-tools editorconfig nfs-common redshift zsh silversearcher-ag wallch dkms exuberant-ctags -y
+sudo apt-get install xclip inotify-tools editorconfig nfs-common redshift zsh silversearcher-ag wallch dkms exuberant-ctags autojump -y
 
 # install oh-my-zsh
 if [ ! -f ~/.oh-my-zsh ]; then
