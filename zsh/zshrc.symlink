@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matt/"
+export PATH="$PATH::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matt/:/home/matt/.gem/ruby/2.3.0/bin"
 precmd() {
   RPROMPT=""
 }
@@ -147,3 +147,9 @@ bindkey '^R' history-incremental-search-backward
 
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# added by travis gem
+[ -f /home/matt/.travis/travis.sh ] && source /home/matt/.travis/travis.sh

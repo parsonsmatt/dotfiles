@@ -4,7 +4,6 @@ let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 
-
 syntax match hsNiceOperator "\<forall\>" display conceal cchar=∀
 syntax match hsNiceOperator "`elem`" conceal cchar=∈
 syntax match hsNiceOperator "`notElem`" conceal cchar=∉
@@ -43,7 +42,13 @@ syntax match hsStructure
 
 syntax match hsNiceOperator "\<not\>" conceal cchar=¬
 
-nnoremap <Leader>t :HdevtoolsType<cr>
-nnoremap <Leader>T :HdevtoolsSig<cr>
-nnoremap <Leader>i :HdevtoolsInfo<cr>
-nnoremap <Leader>c :HdevtoolsClear<cr>
+nnoremap <Leader>hio :InteroOpen<CR>
+nnoremap <Leader>hik :InteroKill<CR>
+nnoremap <Leader>hic :InteroHide<CR>
+nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
+nnoremap <Leader>hie :InteroEval<CR>
+nnoremap <Leader>hit :InteroGenericType<CR>
+nnoremap <Leader>hii :InteroInfo<CR>
+nnoremap <Leader>hid :InteroGoToDef<CR>
+
+setlocal keywordprg=":stack hoogle"

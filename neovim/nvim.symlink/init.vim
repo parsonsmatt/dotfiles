@@ -3,22 +3,27 @@
 let mapleader = ' '
 let maplocalleader = ','
 
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
 call plug#begin()
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'eagletmt/ghcmod-vim'
+Plug 'parsonsmatt/intero-neovim'
+Plug 'neomake/neomake'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'eagletmt/neco-ghc'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'haya14busa/incsearch.vim'
-Plug 'kassio/neoterm'
 Plug 'parsonsmatt/vim2hs'
-" Plug 'neovimhaskell/haskell-vim'
-Plug 'parsonsmatt/vim-hdevtools'
+Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'Raimondi/delimitMate'
-Plug 'scrooloose/syntastic'
-"Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
@@ -97,13 +102,10 @@ set scrolloff=5
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_bad = 1
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_working_path_mode = ''
-
 set nofoldenable
 
 " markdown languages
-let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp']
+let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
 " incsearch.vim
 map / <Plug>(incsearch-forward)
@@ -111,30 +113,30 @@ map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Syntastic settings:
-let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
-let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
-let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
-" hdevtools
-let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 5
-
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-
-" cpp config
-let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wformat=2"
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_check_header = 1
+" let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
+" let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
+" let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
+" let g:syntastic_java_checkers=['javac']
+" let g:syntastic_java_javac_config_file_enabled = 1
+" " hdevtools
+" let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" " let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_loc_list_height = 5
+" 
+" let g:syntastic_python_python_exec = '/usr/bin/python3'
+" 
+" " cpp config
+" let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wformat=2"
+" let g:syntastic_cpp_compiler = "g++"
+" let g:syntastic_cpp_check_header = 1
 
 nnoremap <Leader>v :vsplit<cr>
 nnoremap <Leader>s :split<cr>
-nnoremap <Leader>e :CtrlP<cr>
+nnoremap <Leader>e :FZF<cr>
 
 set ruler
 
@@ -159,7 +161,6 @@ let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 4
-set laststatus=2
 
 let g:haskell_tabular = 1
 
@@ -178,21 +179,9 @@ else " no gui
   endif
 endif
 
-" Neoterm
-let g:neoterm_position = 'vertical'
-let g:neoterm_automap_keys = '<space>rr'
-
 nnoremap <silent> <leader>rf :TREPLSendFile<cr>
 nnoremap <silent> <leader>rs :TREPLSend<cr>
 vnoremap <silent> <leader>rs :TREPLSend<cr>
-
-" Useful maps
-" hide/close terminal
-nnoremap <silent> <leader>rh :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> <leader>rl :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <silent> <leader>rc :call neoterm#kill()<cr>
 
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
@@ -209,3 +198,11 @@ imap <buffer> \lambda λ
 imap <buffer> \Sigma Σ 
 imap <buffer> \exists ∃ 
 imap <buffer> \equiv ≡
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+nnoremap <A-t> :terminal<CR>
+
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 1
