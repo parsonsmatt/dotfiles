@@ -42,15 +42,15 @@ syntax match hsStructure
 
 syntax match hsNiceOperator "\<not\>" conceal cchar=¬
 
-autocmd! BufWritePost *.hs InteroReload
-nnoremap <Leader>hio :InteroOpen<CR>
-nnoremap <Leader>hik :InteroKill<CR>
-nnoremap <Leader>hic :InteroHide<CR>
-nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
-nnoremap <Leader>hie :InteroEval<CR>
-nnoremap <Leader>hit :InteroGenericType<CR>
-nnoremap <Leader>hii :InteroInfo<CR>
-nnoremap <Leader>hid :InteroGoToDef<CR>
-nnoremap <Leader>hiI :InteroTypeInsert<CR>
+" autocmd! BufWritePost *.hs InteroReload
+" nnoremap <Leader>hio :InteroOpen<CR>
+" nnoremap <Leader>hik :InteroKill<CR>
+" nnoremap <Leader>hic :InteroHide<CR>
+" nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
+" nnoremap <Leader>hie :InteroEval<CR>
+" nnoremap <Leader>hit :InteroGenericType<CR>
+" nnoremap <Leader>hii :InteroInfo<CR>
+" nnoremap <Leader>hid :InteroGoToDef<CR>
+" nnoremap <Leader>hiI :InteroTypeInsert<CR>
 
 setlocal keywordprg=":stack hoogle"
