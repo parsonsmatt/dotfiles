@@ -9,6 +9,7 @@ endfunction
 call plug#begin()
 
 " Plug 'parsonsmatt/intero-neovim'
+" Plug 'cloudhead/neovim-ghcid'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

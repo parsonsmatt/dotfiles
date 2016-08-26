@@ -54,3 +54,5 @@ syntax match hsNiceOperator "\<not\>" conceal cchar=¬
 " nnoremap <Leader>hiI :InteroTypeInsert<CR>
 
 setlocal keywordprg=":stack hoogle"
+
+let g:ghcid_command = 'fbghcid'
