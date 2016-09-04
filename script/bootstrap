@@ -132,9 +132,17 @@ install_dotfiles () {
 
   for src in $(find "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
   do
-    dst="$HOME/.$(basename "${src%.*}")"
+    if [ "$src" = "$HOME/.dotfiles/neovim/nvim.symlink" ]
+    then
+    	    dst="$HOME/.config/.$(basename "${src%.*}")"
+    else
+    	    dst="$HOME/.$(basename "${src%.*}")"
+    fi
+    
     link_file "$src" "$dst"
   done
+  
+  link_file "$HOME/.nvim/init.vim" "$HOME/.config/nvim/init.vim"
 }
 
 setup_gitconfig
