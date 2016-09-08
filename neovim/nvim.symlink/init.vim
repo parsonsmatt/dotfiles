@@ -8,25 +8,19 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-" Plug 'parsonsmatt/intero-neovim'
-
 Plug 'kana/vim-arpeggio'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'eagletmt/neco-ghc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'haya14busa/incsearch.vim'
-Plug 'parsonsmatt/vim2hs'
 Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -36,12 +30,6 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'parsonsmatt/purescript-vim'
 Plug 'FrigoEU/psc-ide-vim'
 Plug 'ludovicchabant/vim-gutentags'
-
-" PHP
-Plug 'vim-php/vim-php-refactoring'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'tobyS/vmustache' 
-Plug 'tobyS/pdv'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
@@ -58,6 +46,7 @@ set background=dark
 set clipboard+=unnamedplus
 
 nnoremap <silent> <leader><leader> :noh<CR><C-l>
+nnoremap <leader>w <C-w>w
 
 noremap <Up> <nop>
 noremap <Down> <nop>
@@ -79,8 +68,15 @@ set laststatus=2
 command! W w
 command! Q q
 
+" Background vim with spc-b
+nnoremap <Leader>b <C-z>
+
+" Easier saving
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
+
+" Exit terminal with ESC
+tnoremap <ESC> <C-\><C-n>
 
 " Line numbers
 set number
@@ -102,11 +98,8 @@ set cursorline
 au InsertEnter * set nocursorline
 au InsertLeave * set cursorline
 
-" highlight the current column in current window; may slow down redrawing
-" for long lines or large files
-set cursorcolumn
-
 set scrolloff=5
+
 " haskell conceal
 let g:haskell_conceal_wide = 1
 let g:haskell_conceal_bad = 1
@@ -125,6 +118,17 @@ nnoremap <Leader>v :vsplit<cr>
 nnoremap <Leader>s :split<cr>
 nnoremap <Leader>e :FZF<cr>
 
+" Open terminal
+" horizontal
+nnoremap <Leader>st :split<CR><C-w><C-w>:term<CR>
+nnoremap <Leader>vt :vsplit<CR><C-w><C-w>:term<CR>
+
+" Reload file with rr
+nnoremap rr :w<CR>:so %<CR>
+
+" Window cycle
+map <Leader>w <C-w><C-w>
+
 set ruler
 
 " delimitMate
@@ -136,22 +140,13 @@ vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 
-" Haskell:
-nnoremap <leader>hs :%!stylish-haskell<cr>
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 5
 let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 4
-
 let g:haskell_tabular = 1
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
