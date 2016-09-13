@@ -17,7 +17,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
@@ -26,13 +25,7 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'parsonsmatt/purescript-vim'
-Plug 'FrigoEU/psc-ide-vim'
-
-" Colorschemes
-" Plug 'morhetz/gruvbox'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -43,9 +36,6 @@ let g:vim_airline_theme='tomorrow'
 
 filetype plugin indent on
 syntax on
-
-" Basic syntax completion
-set omnifunc=syntaxcomplete#Complete
 
 set background=dark
 
@@ -179,3 +169,7 @@ call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
 " autocmd! BufWritePost * Neomake
 " let g:neomake_open_list = 1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
