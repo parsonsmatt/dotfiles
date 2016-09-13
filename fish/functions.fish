@@ -4,3 +4,4 @@ end
 
 alias lara "php artisan"
 alias up "cd .."
+alias dots "cd ~/.dotfiles"

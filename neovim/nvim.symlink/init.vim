@@ -1,4 +1,5 @@
-" Fresh neovim configuration
+"
+"Fresh neovim configuration
 
 let mapleader = ' '
 let maplocalleader = ','
@@ -29,24 +30,28 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'parsonsmatt/purescript-vim'
 Plug 'FrigoEU/psc-ide-vim'
-Plug 'ludovicchabant/vim-gutentags'
 
 " Colorschemes
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+let g:vim_airline_theme='tomorrow'
 
 filetype plugin indent on
 syntax on
+
+" Basic syntax completion
+set omnifunc=syntaxcomplete#Complete
 
 set background=dark
 
 set clipboard+=unnamedplus
 
 nnoremap <silent> <leader><leader> :noh<CR><C-l>
-nnoremap <leader>w <C-w>w
 
 noremap <Up> <nop>
 noremap <Down> <nop>
@@ -64,16 +69,15 @@ set ignorecase
 " Filename even with one window:
 set laststatus=2
 
+" Load ctags from codex.tags when available
+set tags=tags;/,codex.tags;/
+
 " Enough of this!
 command! W w
 command! Q q
 
 " Background vim with spc-b
 nnoremap <Leader>b <C-z>
-
-" Easier saving
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>wq :wq<CR>
 
 " Exit terminal with ESC
 tnoremap <ESC> <C-\><C-n>
@@ -147,16 +151,6 @@ let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 4
 let g:haskell_tabular = 1
-
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-
-if has("gui_running")
-  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-else " no gui
-  if has("unix")
-    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-  endif
-endif
 
 nnoremap <silent> <leader>rf :TREPLSendFile<cr>
 nnoremap <silent> <leader>rs :TREPLSend<cr>
