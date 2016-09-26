@@ -42,6 +42,3 @@ syntax match hsStructure
 
 syntax match hsNiceOperator "\<not\>" conceal cchar=¬
 
-" Run hindent with `gq`
-setlocal formatprg=hindent
-

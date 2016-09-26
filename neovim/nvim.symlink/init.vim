@@ -9,6 +9,9 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
+Plug 'neovimhaskell/haskell-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdcommenter'
 Plug 'kana/vim-arpeggio'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
@@ -55,6 +58,9 @@ set incsearch
 set hlsearch
 set smartcase
 set ignorecase
+
+" update faster
+set updatetime=250
 
 " Filename even with one window:
 set laststatus=2
@@ -167,7 +173,8 @@ nnoremap <A-t> :terminal<CR>
 " Map jk to esc (chord)
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
-" autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_haskell_enabled_makers = ['hlint']
 " let g:neomake_open_list = 1
 
 " Use deoplete.
