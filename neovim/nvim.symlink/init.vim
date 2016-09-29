@@ -8,7 +8,6 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-" Plug 'parsonsmatt/intero-neovim'
 " Plug 'cloudhead/neovim-ghcid'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
@@ -27,7 +26,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'vim-pandoc/vim-pandoc'
