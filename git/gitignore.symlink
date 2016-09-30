@@ -5,6 +5,7 @@ cabal.sandbox.config
 
 tags
 TAGS
+*.tags
 
 *~
 [._]*.s[a-w][a-z]

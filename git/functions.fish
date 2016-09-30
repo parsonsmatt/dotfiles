@@ -12,6 +12,7 @@ alias gcb 'git copy-branch-name'
 alias gb 'git branch'
 alias gs 'git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gaa 'git add . -A'
+alias git-obliterate 'git branch | grep -v "master" | xargs git branch -D'
 
 alias gffs 'git flow feature start'
 alias gffd 'git flow feature finish'

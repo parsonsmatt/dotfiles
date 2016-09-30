@@ -41,8 +41,10 @@ filetype plugin indent on
 syntax on
 
 set background=dark
-
 set clipboard+=unnamedplus
+
+" Set 80-char line color to dark gray
+highlight ColorColumn ctermbg=DarkGray
 
 nnoremap <silent> <leader><leader> :noh<CR><C-l>
 
@@ -122,6 +124,9 @@ nnoremap <Leader>e :FZF<cr>
 " horizontal
 nnoremap <Leader>st :split<CR><C-w><C-w>:term<CR>
 nnoremap <Leader>vt :vsplit<CR><C-w><C-w>:term<CR>
+
+" Haskell setup
+nnoremap <Leader>hs :vsplit<CR><C-w><C-w>:term<CR>stack ghci<CR><C-\><C-n>:split<CR><C-w><C-w>:term<CR>ghcid<CR><C-\><C-n><C-w><C-w>
 
 " Reload file with rr
 nnoremap rr :w<CR>:so %<CR>
