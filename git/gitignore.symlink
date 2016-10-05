@@ -48,7 +48,10 @@ tramp
 # cask packages
 .cask/
 
+*.tags
 tags
 TAGS
 
 **/*/\.\~lock*
+
+*.ps
