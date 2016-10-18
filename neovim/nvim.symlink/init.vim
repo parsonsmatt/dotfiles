@@ -8,7 +8,7 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-Plug '~/Projects/intero-neovim'
+" Plug 'cloudhead/neovim-ghcid'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,13 +26,19 @@ Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'parsonsmatt/purescript-vim'
 Plug 'FrigoEU/psc-ide-vim'
+Plug 'ludovicchabant/vim-gutentags'
+
+" PHP
+Plug 'vim-php/vim-php-refactoring'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'tobyS/vmustache' 
+Plug 'tobyS/pdv'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
