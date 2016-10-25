@@ -1,4 +1,4 @@
-# <strike>holman</strike> matt does dotfiles
+# <strike>holman</strike> <strike>matt</strike> ben does dotfiles
 
 ## dotfiles
 
