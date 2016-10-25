@@ -4,41 +4,5 @@ let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 
-syntax match hsNiceOperator "\<forall\>" display conceal cchar=∀
-syntax match hsNiceOperator "`elem`" conceal cchar=∈
-syntax match hsNiceOperator "`notElem`" conceal cchar=∉
-
-syntax match hsStructure
-  \ "()"
-  \ display conceal cchar=∅
-
-syntax match hsStructure
-  \ '\s=>\s'ms=s+1,me=e-1
-  \ display conceal cchar=⇒
-
-syntax match hsOperator
-  \ '\s\~>\s'ms=s+1,me=e-1
-  \ display conceal cchar=⇝
-
-syntax match hsOperator
-  \ '\s>>>\s'ms=s+1,me=e-1
-  \ display conceal cchar=↠
-
-syntax match hsOperator
-  \ '\s<<<\s'ms=s+1,me=e-1
-  \ display conceal cchar=↞
-
-syntax match hsStructure
-  \ '\s-<\s'ms=s+1,me=e-1
-  \ display conceal cchar=↢
-
-syntax match hsStructure
-  \ '\s>-\s'ms=s+1,me=e-1
-  \ display conceal cchar=↣
-
-syntax match hsStructure
-  \ '\s-<<\s'ms=s+1,me=e-1
-  \ display conceal cchar=⇺
-
-syntax match hsNiceOperator "\<not\>" conceal cchar=¬
+:nnoremap <leader>ss v_ap:!stylish-haskell <CR>
 

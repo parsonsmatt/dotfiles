@@ -1,6 +1,3 @@
-"
-"Fresh neovim configuration
-
 let mapleader = ' '
 let maplocalleader = ','
 
@@ -9,31 +6,48 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-Plug 'neovimhaskell/haskell-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
-Plug 'kana/vim-arpeggio'
-Plug 'neomake/neomake'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'elmcast/elm-vim'
+Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'haya14busa/incsearch.vim'
-Plug 'tpope/vim-endwise'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-arpeggio'
+Plug 'mxw/vim-jsx'
+Plug 'neomake/neomake'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'Raimondi/delimitMate'
-Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+set runtimepath+=/Users/Ben/.dotfiles/neovim/nvim.symlink/plugged/deoplete.nvim/
+
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+let g:elm_format_autosave = 1
+
+" Javascript
+let g:javascript_plugin_flow = 1
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0
+
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 let g:vim_airline_theme='tomorrow'
 
@@ -128,11 +142,20 @@ nnoremap <Leader>vt :vsplit<CR><C-w><C-w>:term<CR>
 " Haskell setup
 nnoremap <Leader>hs :vsplit<CR><C-w><C-w>:term<CR>stack ghci<CR><C-\><C-n>:split<CR><C-w><C-w>:term<CR>ghcid<CR><C-\><C-n><C-w><C-w>
 
+" Stylish haskell
+:nnoremap <leader>ss v_ip:!stylish-haskell <CR>
+
+" Hindent
+:nnoremap <leader>shi v_ip:!hindent <CR>
+
 " Reload file with rr
 nnoremap rr :w<CR>:so %<CR>
 
 " Window cycle
 map <Leader>w <C-w><C-w>
+
+" NERDTree
+nnoremap <Leader>ft :NERDTreeToggle<CR>
 
 set ruler
 
