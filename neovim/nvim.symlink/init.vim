@@ -8,10 +8,10 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-Plug 'neomake/neomake'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'neomake/neomake'
+Plug 'vim-syntastic/syntastic'
 Plug 'eagletmt/neco-ghc'
+Plug 'eagletmt/ghcmod-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -31,8 +31,8 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'raichoo/purescript-vim'
 Plug 'FrigoEU/psc-ide-vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-fugitive'
+Plug 'nbouscal/vim-stylish-haskell'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
@@ -113,26 +113,26 @@ map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Syntastic settings:
-" let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
-" let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
-" let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
-" let g:syntastic_java_checkers=['javac']
-" let g:syntastic_java_javac_config_file_enabled = 1
-" " hdevtools
-" let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
-" 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" " let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_loc_list_height = 5
-" 
-" let g:syntastic_python_python_exec = '/usr/bin/python3'
-" 
-" " cpp config
-" let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wformat=2"
-" let g:syntastic_cpp_compiler = "g++"
-" let g:syntastic_cpp_check_header = 1
+let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
+let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
+let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
+" hdevtools
+let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 5
+
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+" cpp config
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic -Wformat=2"
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_check_header = 1
 
 nnoremap <Leader>v :vsplit<cr>
 nnoremap <Leader>s :split<cr>
@@ -204,5 +204,5 @@ let g:deoplete#enable_at_startup = 1
 
 nnoremap <A-t> :terminal<CR>
 
-autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 1
+" autocmd! BufWritePost * Neomake
+" let g:neomake_open_list = 1
