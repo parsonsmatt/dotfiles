@@ -9,30 +9,30 @@ endfunction
 call plug#begin()
 
 " Plug 'neomake/neomake'
-Plug 'vim-syntastic/syntastic'
-Plug 'eagletmt/neco-ghc'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'godlygeek/tabular'
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-" Plug 'haya14busa/incsearch.vim'
-Plug 'parsonsmatt/vim2hs'
-Plug 'tpope/vim-endwise'
-Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-surround'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'raichoo/purescript-vim'
-Plug 'FrigoEU/psc-ide-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'nbouscal/vim-stylish-haskell'
+" Plug 'vim-syntastic/syntastic'
+" Plug 'eagletmt/neco-ghc'
+" Plug 'eagletmt/ghcmod-vim'
+" Plug 'editorconfig/editorconfig-vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
+" Plug 'godlygeek/tabular'
+" Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" " Plug 'haya14busa/incsearch.vim'
+" Plug 'parsonsmatt/vim2hs'
+" Plug 'tpope/vim-endwise'
+" Plug 'pbrisbin/vim-syntax-shakespeare'
+" Plug 'Raimondi/delimitMate'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
+" Plug 'ervandew/supertab'
+" Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-surround'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'raichoo/purescript-vim'
+" Plug 'FrigoEU/psc-ide-vim'
+" Plug 'tpope/vim-fugitive'
+" Plug 'nbouscal/vim-stylish-haskell'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
