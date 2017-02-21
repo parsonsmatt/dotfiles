@@ -17,7 +17,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'haya14busa/incsearch.vim'
+" Plug 'haya14busa/incsearch.vim'
 Plug 'parsonsmatt/vim2hs'
 Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
@@ -108,9 +108,9 @@ set nofoldenable
 let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
 " incsearch.vim
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+"map / <Plug>(incsearch-forward)
+"map ? <Plug>(incsearch-backward)
+"map g/ <Plug>(incsearch-stay)
 
 " Syntastic settings:
 let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
