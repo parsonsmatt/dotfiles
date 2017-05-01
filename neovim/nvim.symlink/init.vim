@@ -8,8 +8,8 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-" Plug 'neomake/neomake'
-Plug 'vim-syntastic/syntastic'
+Plug 'neomake/neomake'
+" Plug 'vim-syntastic/syntastic'
 Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -17,7 +17,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-" Plug 'haya14busa/incsearch.vim'
 Plug 'parsonsmatt/vim2hs'
 Plug 'tpope/vim-endwise'
 Plug 'pbrisbin/vim-syntax-shakespeare'
@@ -27,13 +26,20 @@ Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'raichoo/purescript-vim'
 Plug 'FrigoEU/psc-ide-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'nbouscal/vim-stylish-haskell'
-
+Plug 'mxw/vim-jsx'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
+Plug 'w0rp/ale'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+" Elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'gasparch/vim-elixir-exunit'
 " Colorschemes
 Plug 'morhetz/gruvbox'
 
@@ -107,20 +113,37 @@ set nofoldenable
 " markdown languages
 let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
-" incsearch.vim
-"map / <Plug>(incsearch-forward)
-"map ? <Plug>(incsearch-backward)
-"map g/ <Plug>(incsearch-stay)
-
 " Syntastic settings:
-let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
-let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
-let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
-" hdevtools
-let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
+" let g:syntastic_haskell_checkers=['hdevtools', 'hlint']
+" let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-fwarn-typed-holes -g-XPartialTypeSignatures'
+" let g:syntastic_haskell_hlint_args = '-XQuasiQuotes -XTemplateHaskell -hGeneralise -hDefault "$@"'
+" let g:syntastic_java_checkers=['javac']
+" let g:syntastic_java_javac_config_file_enabled = 1
+" " hdevtools
+" let g:hdevtools_options = '-g-isrc -g-Wall -g-fwarn-typed-hole -g-fdefer-type-errors -g-XPartialTypeSignatures'
 
+"js
+let g:syntastic_javascript_checkers = ['eslint']
+
+function! SyntasticESlintChecker()
+  let l:npm_bin = ''
+  let l:eslint = 'eslint'
+
+  if executable('npm')
+      let l:npm_bin = split(system('npm bin'), '\n')[0]
+  endif
+
+  if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
+    let l:eslint = l:npm_bin . '/eslint'
+  endif
+
+  let b:syntastic_javascript_eslint_exec = l:eslint
+endfunction
+
+
+let g:syntastic_javascript_checkers = ["eslint"]
+
+autocmd FileType javascript :call SyntasticESlintChecker()
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
@@ -199,10 +222,50 @@ imap <buffer> \Sigma Σ
 imap <buffer> \exists ∃ 
 imap <buffer> \equiv ≡
 
+set inccommand=nosplit
+
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
+nnoremap <Leader>fed :e ~/.nvim/init.vim<CR>
+nnoremap <Leader>fer :so ~/.nvim/init.vim<CR>
+
 nnoremap <A-t> :terminal<CR>
 
-" autocmd! BufWritePost * Neomake
-" let g:neomake_open_list = 1
+let g:ale_linters = {
+    \ 'haskell': ['hlint', 'hdevtools'],
+    \ 'elixir': ['credo', 'dogma']
+    \ }
+
+" call ale#linter#Define('haskell', {
+" \   'name': 'stack-ghc',
+" \   'output_stream': 'stderr',
+" \   'executable': 'stack',
+" \   'command': 'stack ghc -- -fno-code -v0 %t',
+" \   'callback': 'ale_linters#haskell#ghc#Handle',
+" \})
+
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 1
+"
+function! s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
+
+if filereadable(".vim.custom")
+    so .vim.custom
+endif
+
+set tags=tags;/,codex.tags;/
+
+set mouse=a
