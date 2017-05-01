@@ -8,7 +8,7 @@ function! DoRemote(arg)
 endfunction
 call plug#begin()
 
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 " Plug 'vim-syntastic/syntastic'
 Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
@@ -39,7 +39,6 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-Plug 'gasparch/vim-elixir-exunit'
 " Colorschemes
 Plug 'morhetz/gruvbox'
 
@@ -237,17 +236,6 @@ let g:ale_linters = {
     \ 'elixir': ['credo', 'dogma']
     \ }
 
-" call ale#linter#Define('haskell', {
-" \   'name': 'stack-ghc',
-" \   'output_stream': 'stderr',
-" \   'executable': 'stack',
-" \   'command': 'stack ghc -- -fno-code -v0 %t',
-" \   'callback': 'ale_linters#haskell#ghc#Handle',
-" \})
-
-autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 1
-"
 function! s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
