@@ -20,15 +20,13 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
+Plug 'neomake/neomake'
+" Plug 'w0rp/ale'
 
 " Haskell
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'nbouscal/vim-stylish-haskell'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
-Plug 'eagletmt/neco-ghc'
-Plug 'eagletmt/ghcmod-vim'
 
 " PureScript
 Plug 'raichoo/purescript-vim'
@@ -239,10 +237,10 @@ nnoremap <Leader>fer :so ~/.nvim/init.vim<CR>
 
 nnoremap <A-t> :terminal<CR>
 
-let g:ale_linters = {
-    \ 'haskell': ['hlint', 'hdevtools'],
-    \ 'elixir': ['credo', 'dogma']
-    \ }
+" let g:ale_linters = {
+"     \ 'haskell': ['hlint'],
+"     \ 'elixir': ['credo', 'dogma']
+"     \ }
 
 function! s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
