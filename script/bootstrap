@@ -143,30 +143,10 @@ install_dotfiles () {
   done
   
   link_file "$HOME/.nvim/init.vim" "$HOME/.config/nvim/init.vim"
-  link_file "$HOME/.fish/config.fish" "$HOME/.config/fish/config.fish"
 }
 
 setup_gitconfig
 install_dotfiles
-
-# Bootstrap fish
-FISH_ALIASES="$HOME/.config/fish/aliases.fish" 
-if [ -f $FISH_ALIASES ]
-then
-    rm $FISH_ALIASES 
-fi
-
-# Load fish functions for each namespace
-for src in $(find "$DOTFILES_ROOT" -type d -depth 1)
-do
-    FN_FILE="$src/functions.fish" 
-    if [ -f "$FN_FILE" ]
-    then
-        echo "Loading functions from file: $FN_FILE"
-        echo "##### $(basename $src) functions (autoloaded from bootstrap) #####" >> $FISH_ALIASES
-        cat $FN_FILE >> "$FISH_ALIASES"
-    fi
-done
 
 echo ''
 echo '  All installed!'
