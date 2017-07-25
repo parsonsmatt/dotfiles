@@ -4,6 +4,7 @@ let maplocalleader = ','
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
+
 call plug#begin()
 
 Plug 'Raimondi/delimitMate'
@@ -201,9 +202,9 @@ nnoremap <A-t> :terminal<CR>
 " Map jk to esc (chord)
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 let g:neomake_haskell_enabled_makers = ['hlint']
-" let g:neomake_open_list = 1
+let g:neomake_open_list = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
