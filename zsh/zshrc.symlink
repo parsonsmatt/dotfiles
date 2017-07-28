@@ -88,11 +88,14 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler rails git-flow autojump cabal vagrant vi-mode)
+plugins=(git git-flow autojump)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Source git aliases again, because the `git` plugin overwrites aliases
+source $HOME/dotfiles-1/git/aliases.zsh
 
 export PATH="$PATH::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 precmd() {
