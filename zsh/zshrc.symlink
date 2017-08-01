@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Source git aliases again, because the `git` plugin overwrites aliases
 source $HOME/dotfiles-1/git/aliases.zsh
 
-export PATH="$PATH::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$PATH::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:./dist"
 precmd() {
   RPROMPT=""
 }

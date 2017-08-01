@@ -7,40 +7,40 @@ endfunction
 
 call plug#begin()
 
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-markdown'
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elmcast/elm-vim'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'haya14busa/incsearch.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-arpeggio'
+Plug 'morhetz/gruvbox'
+Plug 'mxw/vim-jsx'
+Plug 'neomake/neomake'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-endwise'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'pangloss/vim-javascript'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'neomake/neomake'
-Plug 'mxw/vim-jsx'
-Plug 'kana/vim-arpeggio'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'haya14busa/incsearch.vim'
-Plug 'godlygeek/tabular'
-Plug 'ervandew/supertab'
-Plug 'elmcast/elm-vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
-set runtimepath+=/Users/Ben/.dotfiles/neovim/nvim.symlink/plugged/deoplete.nvim/
+set mouse=a
+set encoding=utf-8
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let g:airline_powerline_fonts = 1
 
 let g:elm_format_autosave = 1
 
@@ -49,12 +49,21 @@ let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
+
 let g:neomake_javascript_enabled_makers = ['eslint']
 
-let g:vim_airline_theme='tomorrow'
+set background="dark"
+let g:gruvbox_italic=1
 
-filetype plugin indent on
+colorscheme gruvbox
+let g:airline_theme="gruvbox"
+
+set termguicolors
+
+"set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+
 syntax on
+filetype plugin indent on
 
 set background=dark
 set clipboard+=unnamedplus
@@ -106,8 +115,8 @@ highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 " Default indentation:
 set autoindent
 set smartindent
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 
 " highlight the current line in current window; may slow down redrawing
@@ -117,6 +126,10 @@ au InsertEnter * set nocursorline
 au InsertLeave * set cursorline
 
 set scrolloff=5
+
+let g:haskell_enable_quantification = 1
+let g:haskell_classic_highlighting = 1
+let g:haskell_indent_disable = 1
 
 " haskell conceal
 let g:haskell_conceal_wide = 1
@@ -206,7 +219,4 @@ call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 " autocmd! BufWritePost * Neomake
 let g:neomake_haskell_enabled_makers = ['hlint']
 let g:neomake_open_list = 1
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
