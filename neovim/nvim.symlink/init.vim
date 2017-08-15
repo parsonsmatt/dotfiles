@@ -21,13 +21,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'luochen1990/rainbow'
 
 " Haskell
 Plug 'eagletmt/neco-ghc'
 Plug 'nbouscal/vim-stylish-haskell'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
-Plug 'parsonsmatt/intero-neovim'
+Plug '~/Projects/intero-neovim'
 
 " PureScript
 Plug 'raichoo/purescript-vim'
@@ -35,6 +37,7 @@ Plug 'FrigoEU/psc-ide-vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -49,7 +52,8 @@ Plug 'benjie/neomake-local-eslint.vim'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
-
+Plug 'mhartington/oceanic-next'
+Plug 'tyrannicaltoucan/vim-deep-space'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +68,11 @@ filetype plugin indent on
 syntax on
 
 set background=dark
-colorscheme gruvbox
+set termguicolors
+let g:deepspace_italics=1
+colorscheme deep-space
+let g:airline_theme = 'deep_space'
+highlight Conceal ctermbg=NONE guibg=NONE
 
 " Clear highlighting
 nnoremap <silent> <leader><leader> :noh<CR><C-l>
@@ -141,11 +149,11 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 " Special character inserts
-imap <buffer> \forall ∀ 
-imap <buffer> \to → 
-imap <buffer> \lambda λ 
-imap <buffer> \Sigma Σ 
-imap <buffer> \exists ∃ 
+imap <buffer> \forall ∀
+imap <buffer> \to →
+imap <buffer> \lambda λ
+imap <buffer> \Sigma Σ
+imap <buffer> \exists ∃
 imap <buffer> \equiv ≡
 
 " Show incremental regex replacement
@@ -181,6 +189,9 @@ augroup END
 " Plugin Configuration:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" rainbow
+let g:rainbow_active=1
+
 " delimitMate:
 let delimitMate_expand_cr = 2
 let delimitMate_matchpairs = "(:),{:}"
@@ -193,7 +204,7 @@ let g:deoplete#enable_at_startup = 1
 let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
 " Neomake
-autocmd BufWritePost,BufEnter * Neomake
+autocmd BufWritePost,BufEnter * silent Neomake
 let g:neomake_open_list = 2
 
 " Supertab
@@ -204,6 +215,10 @@ vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 
+" deoplete-rust
+let g:deoplete#sources#rust#racer_binary='/home/matt/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/hom/matt/Projects/rust/src'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language Configuration:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -212,7 +227,7 @@ vmap a- :Tabularize /-><CR>
 nnoremap <leader>hs :%!stylish-haskell<cr>
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd BufWritePost *.hs InteroReload
+autocmd BufWritePost *.hs silent InteroReload
 let g:necoghc_enable_detailed_browse = 1
 
 let g:neomake_haskell_enabled_makers = ['hlint']
@@ -231,6 +246,8 @@ nnoremap <Leader>hit :InteroGenericType<CR>
 nnoremap <Leader>hiT :InteroType<CR>
 nnoremap <Leader>hii :InteroInfo<CR>
 nnoremap <Leader>hiI :InteroTypeInsert<CR>
+
+let g:intero_start_immediately = 1
 
 " Go to definition:
 nnoremap <Leader>hid :InteroGoToDef<CR>
