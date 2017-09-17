@@ -26,7 +26,6 @@ Plug 'luochen1990/rainbow'
 
 " Haskell
 Plug 'eagletmt/neco-ghc'
-Plug 'nbouscal/vim-stylish-haskell'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
 Plug '~/Projects/intero-neovim'
@@ -38,6 +37,7 @@ Plug 'FrigoEU/psc-ide-vim'
 " Rust
 Plug 'rust-lang/rust.vim'
 Plug 'sebastianmarkow/deoplete-rust'
+Plug 'racer-rust/vim-racer'
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -55,6 +55,9 @@ Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 Plug 'tyrannicaltoucan/vim-deep-space'
 call plug#end()
+
+execute "set t_8f=\e[38;2;%lu;%lu;%lum"
+execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editor Configuration:
@@ -204,7 +207,7 @@ let g:deoplete#enable_at_startup = 1
 let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
 " Neomake
-autocmd BufWritePost,BufEnter * silent Neomake
+autocmd BufWritePost * silent Neomake
 let g:neomake_open_list = 2
 
 " Supertab
@@ -217,7 +220,7 @@ vmap a- :Tabularize /-><CR>
 
 " deoplete-rust
 let g:deoplete#sources#rust#racer_binary='/home/matt/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/hom/matt/Projects/rust/src'
+let g:deoplete#sources#rust#rust_source_path='/home/matt/Projects/rust/src'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language Configuration:
