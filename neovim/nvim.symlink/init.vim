@@ -1,17 +1,13 @@
 let mapleader = ' '
 let maplocalleader = ','
 
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-
 call plug#begin()
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-endwise'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
@@ -25,7 +21,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 
 " Haskell
-Plug 'eagletmt/neco-ghc'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
 Plug '~/Projects/intero-neovim'
@@ -229,9 +224,7 @@ let g:deoplete#sources#rust#rust_source_path='/home/matt/Projects/rust/src'
 " Haskell
 nnoremap <leader>hs :%!stylish-haskell<cr>
 let g:haskellmode_completion_ghc = 0
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd BufWritePost *.hs silent InteroReload
-let g:necoghc_enable_detailed_browse = 1
 
 let g:neomake_haskell_enabled_makers = ['hlint']
 

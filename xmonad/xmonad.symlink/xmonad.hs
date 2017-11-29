@@ -40,6 +40,7 @@ main = do
                         }
         , modMask = myModMask
         , focusedBorderColor = "purple"
+        , terminal = "alacritty"
         } `additionalKeys` navKeys myKeyBindings
 
 myKeyBindings = 
