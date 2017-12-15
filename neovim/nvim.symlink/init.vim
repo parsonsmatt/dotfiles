@@ -226,7 +226,7 @@ nnoremap <leader>hs :%!stylish-haskell<cr>
 let g:haskellmode_completion_ghc = 0
 autocmd BufWritePost *.hs silent InteroReload
 
-let g:neomake_haskell_enabled_makers = ['hlint']
+let g:neomake_haskell_enabled_makers = [] " 'hlint']
 
 " Process management:
 nnoremap <Leader>hio :InteroOpen<CR>

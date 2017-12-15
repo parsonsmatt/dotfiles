@@ -1,15 +1,4 @@
-import qualified Prelude as P
-import Prelude
-import Control.Applicative
-import Control.Monad
-import Data.Function
-import Data.Maybe
-import qualified Data.List as L
-import Text.Show.Functions
-import Control.Arrow
-
 :set prompt "λ> "
-:set prompt2 "λ| "
 
 let ghciEscapeShellArg arg = "'" ++ concatMap (\c -> if c == '\'' then "'\"'\"'" else [c]) arg ++ "'"
 
