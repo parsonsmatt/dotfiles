@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
-# cabal install purescript
+npm install -g purescript pulp bower
+stack install psc-package

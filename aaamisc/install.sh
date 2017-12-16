@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 sudo apt-get update
 
@@ -11,3 +11,6 @@ fi
 
 # remap caps lock to control
 sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard
+
+# install stack
+curl -sSL https://get.haskellstack.org/ | sh
