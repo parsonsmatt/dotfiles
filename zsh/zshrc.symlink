@@ -39,7 +39,6 @@ done
 
 unset config_files
 
-export TERM=tmux-256color
 export COLORTERM=truecolor
 
 # Path to your oh-my-zsh installation.
