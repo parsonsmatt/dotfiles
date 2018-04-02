@@ -23,10 +23,11 @@ Plug 'luochen1990/rainbow'
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
-Plug '~/Projects/intero-neovim'
+" Plug '~/Projects/intero-neovim'
+Plug 'parsonsmatt/intero-neovim'
 
 " PureScript
-Plug 'raichoo/purescript-vim'
+Plug 'purescript-contrib/purescript-vim'
 Plug 'FrigoEU/psc-ide-vim'
 
 " Rust
@@ -44,6 +45,9 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'benjie/neomake-local-eslint.vim'
+
+" Nix
+Plug 'LnL7/vim-nix'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
@@ -224,9 +228,13 @@ let g:deoplete#sources#rust#rust_source_path='/home/matt/Projects/rust/src'
 " Haskell
 nnoremap <leader>hs :%!stylish-haskell<cr>
 let g:haskellmode_completion_ghc = 0
-autocmd BufWritePost *.hs silent InteroReload
 
-let g:neomake_haskell_enabled_makers = [] " 'hlint']
+" do tags
+nnoremap <silent> <leader>st :! (cd `git rev-parse --show-toplevel`; codex update)<CR> 
+" :set tags=<C-R>=system("git rev-parse --show-toplevel")<CR><BS>/codex.tags<CR>
+
+
+let g:neomake_haskell_enabled_makers = ['hlint']
 
 " Process management:
 nnoremap <Leader>hio :InteroOpen<CR>
@@ -243,8 +251,8 @@ nnoremap <Leader>hiT :InteroType<CR>
 nnoremap <Leader>hii :InteroInfo<CR>
 nnoremap <Leader>hiI :InteroTypeInsert<CR>
 
-let g:intero_start_immediately = 1
-
+let g:intero_start_immediately = 0
+ 
 " Go to definition:
 nnoremap <Leader>hid :InteroGoToDef<CR>
 
@@ -252,7 +260,14 @@ nnoremap <Leader>hid :InteroGoToDef<CR>
 nnoremap <Leader>hiu :InteroUses<CR>
 
 " Reload the file in Intero after saving
-" autocmd! BufWritePost *.hs InteroReload
+
+function! s:reload_intero_if_done()
+    if g:intero_initialized
+        call intero#repl#reload()
+    endif
+endfunction
+
+autocmd! BufWritePost *.hs call s:reload_intero_if_done()
 
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 5
@@ -324,3 +339,8 @@ else " no gui
     inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
   endif
 endif
+
+" Delete trailing whitespace
+autocmd BufWritePre *.hs :%s/\s\+$//e"
+
+set tags=tags;/,codex.tags;/

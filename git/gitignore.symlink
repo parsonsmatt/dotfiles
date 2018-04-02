@@ -4,6 +4,7 @@
 cabal.sandbox.config
 
 codex.tags
+ctags
 tags
 TAGS
 
