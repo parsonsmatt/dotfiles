@@ -65,7 +65,10 @@ pip3 install neovim
 pip install neovim
 
 echo Installing nix
-curl https://nixos.org/nix/install | sh
+which nix
+if [[ $? != 0 ]]; then
+    curl https://nixos.org/nix/install | sh
+fi
 
 echo Creating neovim symlinks
 mkdir -p ~/.config
