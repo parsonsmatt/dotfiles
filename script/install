@@ -41,11 +41,20 @@ echo Remapping caps lock to control
 sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard
 
 echo Installing stack
-curl -sSL https://get.haskellstack.org/ | sh -s - -f
+which stack
+if [[ $? != 0 ]]; then
+    curl -sSL https://get.haskellstack.org/ | sh -s - -f
+    stack up
+fi
 
+echo Installing rust
+curl https://sh.rustup.rs -sSf >> rust-install.sh
+bash rust-install.sh -y
+rm rust-install.sh
 
 echo Installing neovim python tools
 pip3 install neovim
+pip install neovim
 
 echo Installing nix
 curl https://nixos.org/nix/install | sh
