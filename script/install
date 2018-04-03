@@ -1,11 +1,58 @@
 #!/usr/bin/env bash
-#
-# Run all dotfiles installers.
 
 set -e
 
-cd "$(dirname $0)"/..
+echo Adding repositories...
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 
-# find the installers and run them iteratively
-apt-get update
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+echo Updating repositories...
+sudo apt-get update
+
+echo Installing packages...
+sudo apt-get install -y \
+    autojump \
+    curl \
+    dkms \
+    editorconfig \
+    exuberant-ctags \
+    git \
+    git-flow \
+    inotify-tools \
+    neovim \
+    nfs-common \
+    python3-pip \
+    python-dev \
+    python-pip \
+    python3-dev \
+    redshift \
+    silversearcher-ag \
+    software-properties-common \
+    wallch \
+    xclip \
+    xsel \
+    zsh
+
+echo Installing oh-my-zsh
+if [ ! -f ~/.oh-my-zsh ]; then
+	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
+echo Remapping caps lock to control
+sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard
+
+echo Installing stack
+curl -sSL https://get.haskellstack.org/ | sh -s - -f
+
+
+echo Installing neovim python tools
+pip3 install neovim
+
+echo Installing nix
+curl https://nixos.org/nix/install | sh
+
+echo Creating neovim symlinks
+mkdir -p ~/.config
+ln -sf ~/.nvim ~/.config/nvim
+
+echo Installing PureScript
+npm install -g purescript pulp bower
