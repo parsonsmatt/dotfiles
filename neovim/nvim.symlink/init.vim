@@ -7,7 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-endwise'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}

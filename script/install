@@ -9,29 +9,34 @@ echo Updating repositories...
 sudo apt-get update
 
 echo Installing packages...
-sudo apt-get install -y \
-    autojump \
-    curl \
-    dkms \
-    editorconfig \
-    exuberant-ctags \
-    git \
-    git-flow \
-    inotify-tools \
-    neovim \
-    nfs-common \
-    python3-pip \
-    python-dev \
-    python-pip \
-    python3-dev \
-    redshift \
-    silversearcher-ag \
-    software-properties-common \
-    wallch \
-    xclip \
-    xsel \
-    zsh \
+
+PACKAGES=(
+    autojump
+    curl
+    dkms
+    editorconfig
+    exuberant-ctags
+    git
+    git-flow
     htop
+    inotify-tools
+    neovim
+    nfs-common
+    python-dev
+    python-pip
+    python3-dev
+    python3-pip
+    redshift
+    silversearcher-ag
+    software-properties-common
+    wallch
+    xclip
+    xsel
+    zsh
+    )
+
+echo Installing ${PACKAGES[@]}
+sudo apt-get install -y $(echo ${PACKAGES[@]})
 
 echo Installing oh-my-zsh
 if [ ! -f ~/.oh-my-zsh ]; then
@@ -41,38 +46,45 @@ fi
 echo Remapping caps lock to control
 sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard
 
-echo Installing stack
-which stack
-if [[ $? != 0 ]]; then
-    curl -sSL https://get.haskellstack.org/ | sh -s - -f
-    sudo mv /
-fi
+which stack || {
+    echo Installing stack
+    mkdir -p ~/.local/bin
+    curl -sSL https://get.haskellstack.org/ | sh -s - --dest ~/.local/bin
+}
+
 
 echo Installing Haskell tools
 stack install hlint ghcid stylish-haskell
 
-echo Installing rust
-curl https://sh.rustup.rs -sSf >> rust-install.sh
-bash rust-install.sh -y
-rm rust-install.sh
+which rustup || {
+    echo Installing rust
+    curl https://sh.rustup.rs -sSf >> rust-install.sh
+    bash rust-install.sh -y
+    rm rust-install.sh
+}
 
 mkdir -p ~/Projects
 
-git clone git@github.com:rust-lang/rust ~/Projects/rust
+test ~/Projects/rust || {
+    git clone git@github.com:rust-lang/rust ~/Projects/rust
+}
 
-echo Installing neovim python tools
-pip3 install neovim
+pip install --upgrade pip
+pip2 install --upgrade pip
+
 pip install neovim
+pip2 install neovim
 
-echo Installing nix
-which nix
-if [[ $? != 0 ]]; then
+which nix || {
+    echo Installing nix...
     curl https://nixos.org/nix/install | sh
-fi
+}
 
 echo Creating neovim symlinks
 mkdir -p ~/.config
 ln -sf ~/.nvim ~/.config/nvim
 
-echo Installing PureScript
-npm install -g purescript pulp bower
+which purs || {
+    echo Installing PureScript
+    npm install -g purescript pulp bower
+}
