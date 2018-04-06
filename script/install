@@ -11,7 +11,9 @@ sudo apt-get update
 echo Installing packages...
 
 PACKAGES=(
+    arandr
     autojump
+    build-essential
     curl
     dkms
     editorconfig
@@ -20,6 +22,7 @@ PACKAGES=(
     git-flow
     htop
     inotify-tools
+    libevent-dev
     neovim
     nfs-common
     python3-dev
@@ -31,6 +34,7 @@ PACKAGES=(
     software-properties-common
     tree
     wallch
+    x11-xserver-utils
     xclip
     xsel
     zsh
