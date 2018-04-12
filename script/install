@@ -4,6 +4,7 @@ set -e
 
 echo Adding repositories...
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo add-apt-repository ppa:atareao/telegram -y
 
 echo Updating repositories...
 sudo apt-get update
@@ -32,6 +33,7 @@ PACKAGES=(
     redshift
     silversearcher-ag
     software-properties-common
+    telegram
     tree
     wallch
     x11-xserver-utils
@@ -57,6 +59,15 @@ which stack || {
     curl -sSL https://get.haskellstack.org/ | sh -s - --dest ~/.local/bin
 }
 
+echo Installing blessed fonts
+FONT_HOME=~/.local/share/fonts
+
+(git clone \
+   --branch release \
+   --depth 1 \
+   'https://github.com/adobe-fonts/source-code-pro.git' \
+   "$FONT_HOME/adobe-fonts/source-code-pro" && \
+fc-cache -f -v "$FONT_HOME/adobe-fonts/source-code-pro")
 
 echo Installing Haskell tools
 stack install hlint ghcid stylish-haskell
