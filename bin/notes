@@ -1,1 +1,3 @@
-vi "notes_`date +%F`.markdown"
+#!/usr/bin/env zsh
+
+nvim "notes_`date +%F`.md"

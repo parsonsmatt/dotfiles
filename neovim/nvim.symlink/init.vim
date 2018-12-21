@@ -16,15 +16,13 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
-" Plug '~/Projects/intero-neovim'
-Plug 'parsonsmatt/intero-neovim'
+Plug '~/Projects/intero-neovim'
+" Plug 'parsonsmatt/intero-neovim'
 
 " PureScript
 Plug 'purescript-contrib/purescript-vim'
@@ -35,21 +33,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'sebastianmarkow/deoplete-rust'
 Plug 'racer-rust/vim-racer'
 
-" Elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
-
-" JavaScript
-Plug 'mxw/vim-jsx'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
-Plug 'benjie/neomake-local-eslint.vim'
-
 " Nix
 Plug 'LnL7/vim-nix'
 
 " Colorschemes
+Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 Plug 'tyrannicaltoucan/vim-deep-space'
@@ -72,8 +60,7 @@ syntax on
 set background=dark
 set termguicolors
 let g:deepspace_italics=1
-colorscheme deep-space
-let g:airline_theme = 'deep_space'
+colorscheme NeoSolarized
 highlight Conceal ctermbg=NONE guibg=NONE
 
 " Clear highlighting
@@ -230,11 +217,11 @@ nnoremap <leader>hs :%!stylish-haskell<cr>
 let g:haskellmode_completion_ghc = 0
 
 " do tags
-nnoremap <silent> <leader>st :! (cd `git rev-parse --show-toplevel`; codex update)<CR> 
+nnoremap <silent> <leader>hmt :! (cd `git rev-parse --show-toplevel`; codex update)<CR> 
 " :set tags=<C-R>=system("git rev-parse --show-toplevel")<CR><BS>/codex.tags<CR>
 
 
-let g:neomake_haskell_enabled_makers = ['hlint']
+let g:neomake_haskell_enabled_makers = []
 
 " Process management:
 nnoremap <Leader>hio :InteroOpen<CR>
@@ -244,6 +231,8 @@ nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
 nnoremap <Leader>hif :InteroLoadCurrentFile<CR>
 nnoremap <Leader>his :InteroSetTargets<CR>
 
+let g:intero_start_immediately = 0
+
 " REPL commands
 nnoremap <Leader>hie :InteroEval<CR>
 nnoremap <Leader>hit :InteroGenericType<CR>
@@ -251,8 +240,6 @@ nnoremap <Leader>hiT :InteroType<CR>
 nnoremap <Leader>hii :InteroInfo<CR>
 nnoremap <Leader>hiI :InteroTypeInsert<CR>
 
-let g:intero_start_immediately = 0
- 
 " Go to definition:
 nnoremap <Leader>hid :InteroGoToDef<CR>
 
@@ -260,6 +247,8 @@ nnoremap <Leader>hid :InteroGoToDef<CR>
 nnoremap <Leader>hiu :InteroUses<CR>
 
 " Reload the file in Intero after saving
+
+let g:intero_initialized=0
 
 function! s:reload_intero_if_done()
     if g:intero_initialized

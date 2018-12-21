@@ -153,6 +153,3 @@ export GPG_TTY
 
 # added by travis gem
 [ -f /home/matt/.travis/travis.sh ] && source /home/matt/.travis/travis.sh
-
-. /home/matt/.nix-profile/etc/profile.d/nix.sh
-

@@ -14,6 +14,7 @@ echo Installing packages...
 PACKAGES=(
     arandr
     autojump
+    autotools-dev
     build-essential
     curl
     dkms
@@ -36,6 +37,7 @@ PACKAGES=(
     telegram
     tree
     wallch
+    ubuntu-unity-desktop
     x11-xserver-utils
     xclip
     xsel
@@ -53,6 +55,10 @@ fi
 echo Remapping caps lock to control
 sudo sed -i "s/XKBOPTIONS=\"\"/XKBOPTIONS=\"ctrl:nocaps\"/g" /etc/default/keyboard
 
+echo Creating neovim symlinks
+mkdir -p ~/.config
+ln -sf ~/.nvim ~/.config/nvim
+
 which stack || {
     echo Installing stack
     mkdir -p ~/.local/bin
@@ -62,12 +68,14 @@ which stack || {
 echo Installing blessed fonts
 FONT_HOME=~/.local/share/fonts
 
-(git clone \
-   --branch release \
-   --depth 1 \
-   'https://github.com/adobe-fonts/source-code-pro.git' \
-   "$FONT_HOME/adobe-fonts/source-code-pro" && \
-fc-cache -f -v "$FONT_HOME/adobe-fonts/source-code-pro")
+test ~/.local/share/fonts/adobe-fonts/source-code-pro || {
+	(git clone \
+	   --branch release \
+	   --depth 1 \
+	   'https://github.com/adobe-fonts/source-code-pro.git' \
+	   "$FONT_HOME/adobe-fonts/source-code-pro" && \
+	fc-cache -f -v "$FONT_HOME/adobe-fonts/source-code-pro")
+}
 
 echo Installing Haskell tools
 stack install hlint ghcid stylish-haskell
@@ -86,19 +94,13 @@ test ~/Projects/rust || {
 }
 
 pip install --upgrade pip
-pip2 install --upgrade pip
 
-pip install neovim
-pip2 install neovim
+pip install --user neovim
 
 which nix || {
     echo Installing nix...
     curl https://nixos.org/nix/install | sh
 }
-
-echo Creating neovim symlinks
-mkdir -p ~/.config
-ln -sf ~/.nvim ~/.config/nvim
 
 which purs || {
     echo Installing PureScript
