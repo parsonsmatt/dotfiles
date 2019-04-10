@@ -11,10 +11,8 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-endwise'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
 
@@ -196,9 +194,6 @@ let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c',
 autocmd BufWritePost * silent Neomake
 let g:neomake_open_list = 2
 
-" Supertab
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-
 " Tabularize
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
@@ -321,15 +316,14 @@ syntax match hsNiceOperator "\<not\>" conceal cchar=¬
 " Enable codex tags if present
 set tags=tags;/,codex.tags;/
 
-if has("gui_running")
-  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-else " no gui
-  if has("unix")
-    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-  endif
-endif
-
 " Delete trailing whitespace
 autocmd BufWritePre *.hs :%s/\s\+$//e"
 
 set tags=tags;/,codex.tags;/
+
+" Let's save undo info!
+if !isdirectory($HOME."/.vim-undo")
+    call mkdir($HOME."/.vim-undo", "", 0770)
+endif
+set undodir=~/.vim-undo
+set undofile

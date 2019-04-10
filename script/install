@@ -34,7 +34,7 @@ PACKAGES=(
     redshift
     silversearcher-ag
     software-properties-common
-    telegram
+    telegram-desktop
     tree
     wallch
     ubuntu-unity-desktop
