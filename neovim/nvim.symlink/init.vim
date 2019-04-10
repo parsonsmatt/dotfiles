@@ -36,9 +36,6 @@ Plug 'LnL7/vim-nix'
 
 " Colorschemes
 Plug 'iCyMind/NeoSolarized'
-Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
-Plug 'tyrannicaltoucan/vim-deep-space'
 call plug#end()
 
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
@@ -57,7 +54,6 @@ syntax on
 
 set background=dark
 set termguicolors
-let g:deepspace_italics=1
 colorscheme NeoSolarized
 highlight Conceal ctermbg=NONE guibg=NONE
 
@@ -92,8 +88,8 @@ nnoremap <Leader>wq :wq<CR>
 set number
 set relativenumber
 set numberwidth=2
-highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
-highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
+" highlight LineNr term=bold cterm=none ctermfg=DarkGrey ctermbg=NONE
+" highlight CursorLineNr term=bold cterm=none ctermfg=DarkGreen ctermbg=NONE
 
 " Default indentation:
 set autoindent
