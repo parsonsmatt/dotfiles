@@ -7,7 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-endwise'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
@@ -15,27 +15,18 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
+Plug 'mg979/vim-visual-multi'
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'parsonsmatt/vim2hs'
-Plug '~/Projects/intero-neovim'
-" Plug 'parsonsmatt/intero-neovim'
 
 " PureScript
 Plug 'purescript-contrib/purescript-vim'
-Plug 'FrigoEU/psc-ide-vim'
-
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
-Plug 'racer-rust/vim-racer'
-
-" Nix
-Plug 'LnL7/vim-nix'
 
 " Colorschemes
 Plug 'iCyMind/NeoSolarized'
+
 call plug#end()
 
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
@@ -52,7 +43,7 @@ au TermOpen * setlocal nonumber norelativenumber
 filetype plugin indent on
 syntax on
 
-set background=dark
+set background=light
 set termguicolors
 colorscheme NeoSolarized
 highlight Conceal ctermbg=NONE guibg=NONE
@@ -180,9 +171,6 @@ let delimitMate_expand_cr = 2
 let delimitMate_matchpairs = "(:),{:}"
 let delimitMate_expand_space = 1
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
 " Markdown
 let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
 
@@ -195,59 +183,20 @@ vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 
-" deoplete-rust
-let g:deoplete#sources#rust#racer_binary='/home/matt/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/home/matt/Projects/rust/src'
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language Configuration:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Haskell
-nnoremap <leader>hs :%!stylish-haskell<cr>
+nnoremap <leader>hs ms:%!stylish-haskell<cr>'s
 let g:haskellmode_completion_ghc = 0
 
 " do tags
-nnoremap <silent> <leader>hmt :! (cd `git rev-parse --show-toplevel`; codex update)<CR> 
+nnoremap <silent> <leader>hmt :! codex update<CR> 
 " :set tags=<C-R>=system("git rev-parse --show-toplevel")<CR><BS>/codex.tags<CR>
 
 
 let g:neomake_haskell_enabled_makers = []
-
-" Process management:
-nnoremap <Leader>hio :InteroOpen<CR>
-nnoremap <Leader>hik :InteroKill<CR>
-nnoremap <Leader>hic :InteroHide<CR>
-nnoremap <Leader>hil :InteroLoadCurrentModule<CR>
-nnoremap <Leader>hif :InteroLoadCurrentFile<CR>
-nnoremap <Leader>his :InteroSetTargets<CR>
-
-let g:intero_start_immediately = 0
-
-" REPL commands
-nnoremap <Leader>hie :InteroEval<CR>
-nnoremap <Leader>hit :InteroGenericType<CR>
-nnoremap <Leader>hiT :InteroType<CR>
-nnoremap <Leader>hii :InteroInfo<CR>
-nnoremap <Leader>hiI :InteroTypeInsert<CR>
-
-" Go to definition:
-nnoremap <Leader>hid :InteroGoToDef<CR>
-
-" Highlight uses of identifier:
-nnoremap <Leader>hiu :InteroUses<CR>
-
-" Reload the file in Intero after saving
-
-let g:intero_initialized=0
-
-function! s:reload_intero_if_done()
-    if g:intero_initialized
-        call intero#repl#reload()
-    endif
-endfunction
-
-autocmd! BufWritePost *.hs call s:reload_intero_if_done()
 
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 5
@@ -267,10 +216,6 @@ let g:haskell_indent_case = 5
 let g:haskell_indent_let = 4
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
-
-setlocal keywordprg=":stack hoogle"
-
-setlocal formatprg=hindent
 
 syntax match hsNiceOperator "\<forall\>" display conceal cchar=∀
 syntax match hsNiceOperator "`elem`" conceal cchar=∈
@@ -309,6 +254,7 @@ syntax match hsStructure
   \ display conceal cchar=⇺
 
 syntax match hsNiceOperator "\<not\>" conceal cchar=¬
+"
 " Enable codex tags if present
 set tags=tags;/,codex.tags;/
 
@@ -323,3 +269,6 @@ if !isdirectory($HOME."/.vim-undo")
 endif
 set undodir=~/.vim-undo
 set undofile
+
+" Search the word under the cursor
+nnoremap <leader>rg viw"ry:Rg <C-r>r<CR>

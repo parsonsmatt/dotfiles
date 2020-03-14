@@ -1,4 +1,4 @@
--- :set prompt "λ> "
+:set prompt "λ> "
 
 let ghciEscapeShellArg arg = "'" ++ concatMap (\c -> if c == '\'' then "'\"'\"'" else [c]) arg ++ "'"
 
