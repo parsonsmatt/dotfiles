@@ -15,7 +15,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
-Plug 'mg979/vim-visual-multi'
+" Plug 'mg979/vim-visual-multi'
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
