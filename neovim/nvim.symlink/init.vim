@@ -6,16 +6,14 @@ call plug#begin()
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-endwise'
-Plug 'Raimondi/delimitMate'
+" Plug 'tpope/vim-endwise'
+" Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
-Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'neomake/neomake'
-Plug 'luochen1990/rainbow'
-" Plug 'mg979/vim-visual-multi'
+" Plug 'luochen1990/rainbow'
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
@@ -112,6 +110,7 @@ if filereadable(".vim.custom")
 endif
 
 set mouse=a
+
 " Alt-{hjkl} for navigating panes
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
@@ -122,16 +121,9 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" Special character inserts
-imap <buffer> \forall ∀
-imap <buffer> \to →
-imap <buffer> \lambda λ
-imap <buffer> \Sigma Σ
-imap <buffer> \exists ∃
-imap <buffer> \equiv ≡
-
 " Show incremental regex replacement
-set inccommand=nosplit
+" TODO: disabled because it is slow
+" set inccommand=nosplit
 
 " Edit and reload vim configuration
 nnoremap <Leader>fed :e ~/.nvim/init.vim<CR>
@@ -163,25 +155,9 @@ augroup END
 " Plugin Configuration:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" rainbow
-let g:rainbow_active=1
-
-" delimitMate:
-let delimitMate_expand_cr = 2
-let delimitMate_matchpairs = "(:),{:}"
-let delimitMate_expand_space = 1
-
-" Markdown
-let g:markdown_fenced_languages = ['java', 'haskell', 'javascript', 'ruby', 'c', 'cpp', 'php']
-
 " Neomake
 autocmd BufWritePost * silent Neomake
 let g:neomake_open_list = 2
-
-" Tabularize
-vmap a= :Tabularize /=<CR>
-vmap a; :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language Configuration:
@@ -189,79 +165,13 @@ vmap a- :Tabularize /-><CR>
 
 " Haskell
 nnoremap <leader>hs ms:%!stylish-haskell<cr>'s
-let g:haskellmode_completion_ghc = 0
 
 " do tags
 nnoremap <silent> <leader>hmt :! codex update<CR> 
 " :set tags=<C-R>=system("git rev-parse --show-toplevel")<CR><BS>/codex.tags<CR>
 
-
-let g:neomake_haskell_enabled_makers = []
-
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 5
-let g:haskell_indent_let = 4
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-let g:haskell_indent_guard = 4
-
-let g:haskell_tabular = 1
-
-" Do conceals of wide stuff, like ::, forall, =>, etc.
-let g:haskell_conceal_wide = 1
-let g:haskell_conceal_bad = 1
-
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 5
-let g:haskell_indent_let = 4
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-
-syntax match hsNiceOperator "\<forall\>" display conceal cchar=∀
-syntax match hsNiceOperator "`elem`" conceal cchar=∈
-syntax match hsNiceOperator "`notElem`" conceal cchar=∉
-
-syntax match hsStructure
-  \ "()"
-  \ display conceal cchar=∅
-
-syntax match hsStructure
-  \ '\s=>\s'ms=s+1,me=e-1
-  \ display conceal cchar=⇒
-
-syntax match hsOperator
-  \ '\s\~>\s'ms=s+1,me=e-1
-  \ display conceal cchar=⇝
-
-syntax match hsOperator
-  \ '\s>>>\s'ms=s+1,me=e-1
-  \ display conceal cchar=↠
-
-syntax match hsOperator
-  \ '\s<<<\s'ms=s+1,me=e-1
-  \ display conceal cchar=↞
-
-syntax match hsStructure
-  \ '\s-<\s'ms=s+1,me=e-1
-  \ display conceal cchar=↢
-
-syntax match hsStructure
-  \ '\s>-\s'ms=s+1,me=e-1
-  \ display conceal cchar=↣
-
-syntax match hsStructure
-  \ '\s-<<\s'ms=s+1,me=e-1
-  \ display conceal cchar=⇺
-
-syntax match hsNiceOperator "\<not\>" conceal cchar=¬
-"
-" Enable codex tags if present
-set tags=tags;/,codex.tags;/
-
 " Delete trailing whitespace
 autocmd BufWritePre *.hs :%s/\s\+$//e"
-
-set tags=tags;/,codex.tags;/
 
 " Let's save undo info!
 if !isdirectory($HOME."/.vim-undo")
