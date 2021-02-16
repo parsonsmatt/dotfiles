@@ -54,3 +54,5 @@ TAGS
 
 **/*/\.\~lock*
 npm-debug.log
+
+.nvimlog

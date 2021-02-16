@@ -12,7 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
 " Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 " Plug 'luochen1990/rainbow'
 
 " Haskell
@@ -156,8 +156,8 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Neomake
-autocmd BufWritePost * silent Neomake
-let g:neomake_open_list = 2
+" autocmd BufWritePost * silent Neomake
+" let g:neomake_open_list = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language Configuration:
@@ -182,3 +182,11 @@ set undofile
 
 " Search the word under the cursor
 nnoremap <leader>rg viw"ry:Rg <C-r>r<CR>
+
+" PureScript
+let g:purescript_indent_case = 2
+let g:purescript_indent_let = 2
+let g:purescript_indent_in = 0
+let g:purescript_indent_where = 2
+let g:purescript_indent_do = 2
+let g:purescript_indent_dot = 1
