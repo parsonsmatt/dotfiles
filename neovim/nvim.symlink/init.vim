@@ -3,6 +3,7 @@ let maplocalleader = ','
 
 call plug#begin()
 
+Plug 'LnL7/vim-nix'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -10,13 +11,14 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-endwise'
 " Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': 'make -f  make_unix.mak'}
-" Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 " Plug 'neomake/neomake'
 " Plug 'luochen1990/rainbow'
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'alx741/yesod.vim'
 Plug 'parsonsmatt/vim2hs'
 
 " PureScript
@@ -166,6 +168,8 @@ augroup END
 " Haskell
 nnoremap <leader>hs ms:%!stylish-haskell<cr>'s
 
+au BufRead,BufNewFile *.persistentmodels set filetype=yesod
+
 " do tags
 nnoremap <silent> <leader>hmt :! codex update<CR> 
 " :set tags=<C-R>=system("git rev-parse --show-toplevel")<CR><BS>/codex.tags<CR>
@@ -190,3 +194,17 @@ let g:purescript_indent_in = 0
 let g:purescript_indent_where = 2
 let g:purescript_indent_do = 2
 let g:purescript_indent_dot = 1
+
+""" TODO list macros and commands
+" Creates a `new` TODO item templated with the created time.
+nnoremap <leader>tdn Go<Esc>I- <CR>    - Created: <Esc>"=strftime('%F')<CR>pkA
+
+function! s:CompleteTodoItem()
+    " first, find the lines consisting of the TODO item in question
+    " copy the lines into a register
+    " then, find/create the file corresponding to today's date
+    " insert the TODO item in the file
+endfunction
+
+" `C`omplete a given TODO item by moving it into the corresponding daily notes file.
+nnoremap <leader>tdc :call s:CompleteTodoItem()

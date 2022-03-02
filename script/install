@@ -18,6 +18,7 @@ PACKAGES=(
     build-essential
     curl
     dkms
+    direnv
     editorconfig
     exuberant-ctags
     git
@@ -26,11 +27,13 @@ PACKAGES=(
     inotify-tools
     libevent-dev
     neovim
+    nodejs
+    npm 
     nfs-common
     python3-dev
     python3-pip
     python-dev
-    python-pip
+    python-pip-whl
     redshift
     silversearcher-ag
     software-properties-common
@@ -48,7 +51,7 @@ echo Installing ${PACKAGES[@]}
 sudo apt-get install -y $(echo ${PACKAGES[@]})
 
 echo Installing oh-my-zsh
-if [ ! -f ~/.oh-my-zsh ]; then
+if [[ ! -d ~/.oh-my-zsh ]]; then
 	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
 
@@ -93,9 +96,9 @@ test ~/Projects/rust || {
     git clone git@github.com:rust-lang/rust ~/Projects/rust
 }
 
-pip install --upgrade pip
+pip3 install --upgrade pip
 
-pip install --user neovim
+pip3 install --user neovim
 
 which nix || {
     echo Installing nix...
