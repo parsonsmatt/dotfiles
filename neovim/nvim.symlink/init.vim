@@ -15,6 +15,8 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 " Plug 'neomake/neomake'
 " Plug 'luochen1990/rainbow'
+Plug 'linrongbin16/gitlinker.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
@@ -208,3 +210,7 @@ endfunction
 
 " `C`omplete a given TODO item by moving it into the corresponding daily notes file.
 nnoremap <leader>tdc :call s:CompleteTodoItem()
+
+lua << EOF
+require"gitlinker".setup()
+EOF

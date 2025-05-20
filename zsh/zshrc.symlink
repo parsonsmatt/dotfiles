@@ -157,6 +157,11 @@ export PATH=$PATH:/usr/lib/postgresql/10/bin/
 [ -f /home/matt/.travis/travis.sh ] && source /home/matt/.travis/travis.sh
 export PATH=$PATH:./bin:/usr/local/bin:/usr/local/sbin:/home/matt/.dotfiles/bin:./bin:/usr/local/bin:/usr/local/sbin:/home/matt/.dotfiles/bin:/home/matt/.cargo/bin:/home/matt/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/matt/.cabal/bin:/opt/cabal/2.0/bin:/opt/ghc/8.2.1/bin:/opt/happy/1.19.5/bin:/opt/alex/3.1.7/bin:.cabal-sandbox/bin:/home/matt/.local/bin:/home/matt/.npm/bin:/home/matt/.cargo/bin::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matt/:/home/matt/.gem/ruby/2.3.0/bin:/home/matt/.fzf/bin:/usr/lib/postgresql/VERSION/bin/:/home/matt/.cabal/bin:/opt/cabal/2.0/bin:/opt/ghc/8.2.1/bin:/opt/happy/1.19.5/bin:/opt/alex/3.1.7/bin:.cabal-sandbox/bin:/home/matt/.local/bin:/home/matt/.npm/bin:/home/matt/.cargo/bin::/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/matt/:/home/matt/.gem/ruby/2.3.0/bin:/usr/lib/postgresql/VERSION/bin/:/usr/lib/postgresql/10/bin/
 
+HOSTNAME=$(hostname)
+if [ "$HOSTNAME" = "matt-lenovo-p16" ]; then
+    xinput set-button-map 12 1 1 3
+fi
+
 if [ "$IN_NIX_SHELL" = impure ]; then
     export PROMPT="${PROMPT}%F{blue}(nix)%f "
 else
