@@ -172,6 +172,9 @@ nnoremap <leader>hs ms:%!stylish-haskell<cr>'s
 
 au BufRead,BufNewFile *.persistentmodels set filetype=yesod
 
+nnoremap <leader>f :cf<cr>
+nnoremap <leader>n :cn<cr>
+
 " do tags
 nnoremap <silent> <leader>hmt :! codex update<CR> 
 " :set tags=<C-R>=system("git rev-parse --show-toplevel")<CR><BS>/codex.tags<CR>
@@ -210,6 +213,10 @@ endfunction
 
 " `C`omplete a given TODO item by moving it into the corresponding daily notes file.
 nnoremap <leader>tdc :call s:CompleteTodoItem()
+
+" Set the error format so as to properly handle GHCID errors in the quickfix
+" window
+let &errorformat='%f:%l:%c:%m,%f:%l:%c-%n:%m,%f:(%l\,%c)-%m'
 
 lua << EOF
 require"gitlinker".setup()
