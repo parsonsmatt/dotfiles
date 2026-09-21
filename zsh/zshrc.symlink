@@ -179,3 +179,5 @@ eval "$(direnv hook zsh)"
 unset LD_PRELOAD
 
 export LC_ALL=C.UTF-8
+
+ulimit -Sn "$(ulimit -Hn)"
